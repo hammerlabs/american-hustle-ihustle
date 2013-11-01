@@ -52,21 +52,30 @@
             $("#step1").fadeOut('fast', function() {
                 $("#loading").fadeIn('fast', function() {
                     $("#loading").fadeIn('fast', function() {
-                        setTimeout(function() {
-                            imageReady();
-                        }, 1000);
+                        // instead of this timeout, submit the user's text and call imageReady on the response
+                        $.getJSON( "create.php", {text: window.currentHustle} )
+                            .done(function( json ) {
+                                console.log( "JSON Data: ", json );
+                                imageReady(json.url);
+                            })
+                            .fail(function( jqxhr, textStatus, error ) {
+                                var err = textStatus + ", " + error;
+                                console.log( "Request Failed: " + err );
+                            });
                     });
                 });
             });
         });
     });
 
-    function imageReady() {
+    function imageReady(url) {
+        // in the response, we should be getting a publicly available URL for the user's image
+        window.currentImageUrl = location.href + url;
+        $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
+        
         $("#loading").fadeOut('fast', function() {
             $("#step2").fadeIn('fast');
         });
-        window.currentImageUrl = location.href + "assets/img/sample1.jpg";
-        $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
 
         $Share.options.shareImage = window.currentImageUrl;
         $(".facebook").click(function(event) {$Share.facebook();});
