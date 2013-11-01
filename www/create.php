@@ -14,8 +14,10 @@ composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
 * I need to be able to tell Sony what sort of permissions PHP needs to write temp files and final files
 
 */
+// the text is passed in the GET
+$text = $_GET["text"];
 //just pass back a relative URL to the root of the site for where you store the user images
 $imageUrl = "assets/img/sample1.jpg";
 header('Content-Type: application/json');
-$arr = array ('url'=>$imageUrl);
+$arr = array ('url'=>$imageUrl,'text'=>$text);
 echo json_encode($arr);
