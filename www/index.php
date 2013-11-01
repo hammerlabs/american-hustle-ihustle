@@ -10,9 +10,9 @@ convert -background black -fill #cfcfcf -font RaleWay -pointsize 16 -size 320x14
 label_centered-2.jpg
 convert -background black -fill #cfcfcf -font RaleWay -pointsize 16 -density 216 -resample 72 -size 960x420 -gravity South label:"IF YOU EVER HOLD\nTHE DOOR OPEN FOR SOMEONE\nJUST SO YOU CAN CHECK THEM OUT." label.png
 
-convert -background none -fill #ffffff -font RaleWay -pointsize 16 -interline-spacing 22 -density 216 -resample 72 -size 960x420 -gravity South caption:"PITHY JAB" label.png
+convert -background none -fill #ffffff -font RaleWay -pointsize 16 -interline-spacing 22 -density 216 -resample 72 -size 960x420 -gravity South caption:"IF YOU EVER HOLD\nTHE DOOR OPEN FOR SOMEONE\nJUST SO YOU CAN CHECK THEM OUT." label.png
 
-composite -gravity center -geometry +0-90 label.png base-image.png sample.jpg
+composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
 
 */
 ?>
