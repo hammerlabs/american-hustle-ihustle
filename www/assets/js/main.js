@@ -40,8 +40,9 @@
             }
         });
         $(".submit").click(function(event) {
-            $("#step1").fadeOut();
-            $("#step2").fadeIn();
+            $("#step1").fadeOut('fast', function() {
+	            $("#step2").fadeIn('fast');            	
+            });
         });
     });
 	
