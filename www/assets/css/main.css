@@ -77,6 +77,7 @@ textarea {
 	color: #959595;
 	font-family: 'Raleway', sans-serif;
 	resize: none;
+	text-transform: uppercase;
 }
 .originalDisplayInfo {
 	color: #959595;
@@ -103,7 +104,6 @@ textarea {
 	line-height: 20px;
 	text-transform: uppercase;
 	overflow: hidden;
-	word-break: break-all;
 }
 .info {
 	color: #d7d7d7;
