@@ -49,6 +49,18 @@ composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
                 	<a class="button sample">VIEW SAMPLE</a>
                 	<a class="button submit">SUBMIT</a>
                 </div>
+                <div id="step2">
+                	<div class="share_image"></div>
+                	<div class="inputbox">Your hustle has been submitted!<br/><br/>Now share it!</div>
+                	<div class="social_holder">
+	                	<span class="social facebook"></span>
+	                	<span class="social twitter"></span>
+	                	<span class="social tumblr"></span>
+	                	<span class="social google"></span>
+	                	<span class="social pinterest"></span>
+                	</div>
+                	<a class="button seeall">SEE ALL</a>
+                </div>
             </div>
         </div>
         <script src="assets/js/libs/TweenMax.min.js" type="text/javascript"></script>  

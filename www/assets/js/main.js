@@ -17,9 +17,9 @@
         });
 
         $('#user_input').bind('keyup', function(event) {
-            updatePreview();
-            hideSample();
-        })
+	            updatePreview();
+	            hideSample();
+	        })
             .bind('mouseover', function(event) {
                 setTimeout(function() {
                     updatePreview();
@@ -38,6 +38,10 @@
             } else {
             	showSample();
             }
+        });
+        $(".submit").click(function(event) {
+            $("#step1").fadeOut();
+            $("#step2").fadeIn();
         });
     });
 	
@@ -79,13 +83,13 @@
         return false;
     }
 
-   	$(".button").mouseenter(function (event){  
+   	/*$(".button").mouseenter(function (event){  
 		if (!$(this).hasClass('selected')) TweenMax.to(this, .2, {backgroundColor:"#ffc500", color:"#000", overwrite:2});   
 	}); 
 	
 	$(".button").mouseleave(function (event){    
 		if (!$(this).hasClass('selected')) TweenMax.to(this, .2, {backgroundColor:"#5a5a5a", color:"#d1d1d1", overwrite:2});     
-	}); 
+	}); */
 
 
 }(jQuery));

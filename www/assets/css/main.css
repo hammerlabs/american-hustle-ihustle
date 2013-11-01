@@ -11,7 +11,7 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-a.selected {
+a.selected, a:hover {
 	background-color: #ffc500; 
 	color: #000000; 
 }
@@ -138,6 +138,47 @@ textarea {
 	padding-top: 16px;
 	padding-bottom: 16px;
 }
+#step2 {
+	display: none;
+}
+#step2 .inputbox {
+	color: white;
+	font-size: 20px;
+}
+#step2 .shareimage {
+	background-image: url(../img/base-image.jpg);
+}
 .button {
 	margin-left: 6px;
+}
+.button.seeall {
+	float: right;
+	display: block;
+	margin-left: 30px;
+	margin-right: 77px;
+	margin-top: 10px;
+}
+.social_holder {
+	float: right;
+	margin-top: 14px;
+}
+.social {
+	background-repeat: no-repeat;
+	width: 48px;
+	height: 45px;
+	display: inline-block;
+	margin-right: 12px;
+	cursor: pointer;
+}
+.social.facebook {
+	background-image: url(../img/facebook.png);
+}.social.twitter {
+	background-image: url(../img/twitter.png);
+}.social.tumblr {
+	background-image: url(../img/tumblr.png);
+}.social.google {
+	background-image: url(../img/google.png);
+}.social.pinterest {
+	background-image: url(../img/pinterest.png);
+	margin-right: 0px;
 }
