@@ -41,10 +41,22 @@
         });
         $(".submit").click(function(event) {
             $("#step1").fadeOut('fast', function() {
-	            $("#step2").fadeIn('fast');            	
+	            $("#loading").fadeIn('fast', function() {
+		            $("#loading").fadeIn('fast', function() {
+		            	setTimeout(function() {
+		            		imageReady();
+		            	}, 1000);
+		            });            	
+	            });            	
             });
         });
     });
+
+	function imageReady() {
+		$("#loading").fadeOut('fast', function () {
+			$("#step2").fadeIn('fast');
+		});
+	}
 	
 	function hideSample() {
 		$(".share_image").removeClass('sample');

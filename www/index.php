@@ -49,6 +49,9 @@ composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
                 	<a class="button sample">VIEW SAMPLE</a>
                 	<a class="button submit">SUBMIT</a>
                 </div>
+                <div id="loading">
+                	hustling...
+                </div>
                 <div id="step2">
                 	<div class="share_image"></div>
                 	<div class="inputbox">Your hustle has been submitted!<br/><br/>Now share it!</div>
