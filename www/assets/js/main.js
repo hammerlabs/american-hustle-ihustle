@@ -1,5 +1,13 @@
 (function($) {
 
+    // make console safe to use
+    if (typeof console === "undefined"){
+        console={};
+        console.log = function(){
+            return;
+        }
+    }
+
     $(document).ready(function() {
 
         window.currentHustle = "";
@@ -52,7 +60,6 @@
             $("#step1").fadeOut('fast', function() {
                 $("#loading").fadeIn('fast', function() {
                     $("#loading").fadeIn('fast', function() {
-                        // instead of this timeout, submit the user's text and call imageReady on the response
                         $.getJSON( "create.php", {text: window.currentHustle} )
                             .done(function( json ) {
                                 console.log( "JSON Data: ", json );
