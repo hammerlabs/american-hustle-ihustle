@@ -29,6 +29,7 @@ composite -gravity center -geometry +0-90 label.png base-image.png sample.jpg
         <link href='assets/css/main.css' rel='stylesheet' type='text/css'>
 
         <script src="assets/js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
+        <script src="assets/js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
         <script src="assets/js/libs/jquery.textareaCounter.plugin.js" type="text/javascript"></script>  
     </head>
     <body>

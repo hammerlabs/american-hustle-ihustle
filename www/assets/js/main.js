@@ -2,6 +2,10 @@
 
     $(document).ready(function() {
 
+		$("#site_holder").queryLoader2({
+			useOverlay:false
+		});
+
         $('#user_input').textareaCount({
             'maxCharacterSize': 100,
             'originalStyle': 'originalDisplayInfo',
