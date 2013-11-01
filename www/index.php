@@ -67,6 +67,7 @@ composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
             </div>
         </div>
         <script src="assets/js/libs/TweenMax.min.js" type="text/javascript"></script>  
+        <script src="assets/js/share.js" type="text/javascript"></script>  
         <script src="assets/js/main.js" type="text/javascript"></script>  
     </body>
 </html>
