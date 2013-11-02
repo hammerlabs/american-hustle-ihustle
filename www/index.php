@@ -44,7 +44,7 @@
 	                	<span class="social google"></span>
 	                	<span class="social pinterest"></span>
                 	</div>
-                	<a class="button seeall">SEE ALL</a>
+                	<a class="button seeall" target="_parent">SEE ALL</a>
                 </div>
             </div>
         </div>

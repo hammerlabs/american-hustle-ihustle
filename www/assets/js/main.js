@@ -13,11 +13,12 @@
         window.currentHustle = "";
         window.currentImageUrl = "";
 
+        window.tumblrRoot = "http://ahdev.tumblr.com/";
         $Share.init({
-            shareUrl: "http://www.americanhustle-movie.com/site/",
+            shareUrl: "http://ww.AmericanHustleMovie.Tumblr.com",
             shareImage: "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg",
             title: "American Hustle",
-            content: "Christian Bale, Bradley Cooper, Amy Adams, Jeremy Renner and Jennifer Lawrencestar in #American Hustle. In theaters December.",
+            content: "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013. http://ww.AmericanHustleMovie.Tumblr.com",
             tags: "#iHustle #AmericanHustle"
         })
 
@@ -83,6 +84,8 @@
         $("#loading").fadeOut('fast', function() {
             $("#step2").fadeIn('fast');
         });
+
+        $(".seeall").attr('href', window.tumblrRoot+'tagged/iHustle');
 
         $Share.options.shareImage = window.currentImageUrl;
         $(".facebook").click(function(event) {$Share.facebook();});
