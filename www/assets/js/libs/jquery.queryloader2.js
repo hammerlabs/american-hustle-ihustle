@@ -115,37 +115,6 @@
                 top: "50%"
             }).appendTo(base.qLoverlay);
 
-            /*base.qLbar2 = $("<div id='qLbar2' class='qLbar'></div>").css({
-                height: base.options.barHeight + "px",
-                marginTop: "-" + (base.options.barHeight / 2) + "px",
-                backgroundColor: base.options.barColor,
-                width: "0%",
-                position: "absolute",
-                top: "51%"
-            }).appendTo(base.qLoverlay);
-
-
-            $("<div id='qLbarFix1'></div>").css({
-                height: base.options.barHeight + "px",
-                marginTop: "-" + (base.options.barHeight / 2) + "px",
-                backgroundColor: base.options.barColor,
-                width: "100%",
-                position: "absolute",
-                top: "50%",
-                opacity:0.3
-            }).appendTo(base.qLoverlay);            
-
-            $("<div id='qLbarFix2'></div>").css({
-                height: base.options.barHeight + "px",
-                marginTop: "-" + (base.options.barHeight / 2) + "px",
-                backgroundColor: base.options.barColor,
-                width: "100%",
-                position: "absolute",
-                top: "51%",
-                opacity:0.3
-            }).appendTo(base.qLoverlay);  */          
-
-
             if (base.options.percentage == true) {
                 base.qLpercentage = $("<div id='qLpercentage'></div>").text("0%").css({
                     height: "40px",
@@ -191,7 +160,7 @@
                 url = url.replace(/\"\)/g, "");
                 url = url.replace(/\)/g, "");
 
-                var urls = url.split(", ");
+                var urls = url.split(",");
 
                 for (var i = 0; i < urls.length; i++) {
                     if (urls[i].length > 0 && base.qLimages.indexOf(urls[i]) == -1 && !urls[i].match(/^(data:)/i)) {
@@ -229,10 +198,13 @@
             /* look through stylesheets in reverse order that
             they appear in the document */
             for (i=sheetList.length-1; i >= 0; i--) {
-                ruleList = sheetList[i].cssRules;
+                // some browsers can't read stylesheets from other domains, like a CDN
+                try {
+                    ruleList = sheetList[i].cssRules;
+                } catch (e) {}
                 if (!ruleList) continue;
                 for (j=0; j<ruleList.length; j++) {
-                    //console.log(ruleList[j].cssText, ruleList[j]);
+                    console.log(ruleList[j].cssText, ruleList[j]);
                     if (ruleList[j].type == CSSRule.STYLE_RULE && 
                         ruleList[j].cssText.indexOf('background-image') != -1) {
                         var bgImageRule = ruleList[j].style["background-image"];
