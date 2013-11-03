@@ -120,7 +120,7 @@
         } else {
             $(".inputbox").removeClass('error');
         }
-        window.currentHustle = $('#user_input').val();
+        window.currentHustle = $('#user_input').val().toUpperCase();
         $('.preview_text').html($('#user_input').val().replace(/\n/g, "<br/>"));
         return true;
     }
