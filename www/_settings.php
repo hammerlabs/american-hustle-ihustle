@@ -3,18 +3,16 @@ error_reporting(E_ALL);
 
 $title = "American Hustle | iHustle"; 
 $desc = "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013."; 
-$url = "http://ww.AmericanHustleMovie.Tumblr.com"; 
+$url = "http://www.AmericanHustleMovie.Tumblr.com"; 
 $image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
-$facebook_url = "https://www.facebook.com/LoneSurvivorFilm";    
-$keywords = "Lone Survivor Mark Wahlberg Taylor Kitsch Alexander Ludwig Eric Bana Ben Foster Emile Hirsch";    
-$og_title = "Follow The Latest News From The Lone Survivor";
+$facebook_url = "https://www.facebook.com/AmericanHustle";    
+$keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adams, Christian Bale, Jeremy Renner, Jennifer Lawrence, David O. Russell, Eric Warren Singer";    
+$og_title = "American Hustle | iHustle | Sony Pictures";
 $share_tags = "#iHustle #AmericanHustle";    
 $share_title = "American Hustle";    
 $share_content = "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013. http://ww.AmericanHustleMovie.Tumblr.com"; 
 $share_url = "http://www.AmericanHustleMovie.Tumblr.com"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
-$share_blogname = BLOGNAME; 
-$webroot = curPagePath(); 
 
 $_environments_list = array(
 	'testing' => array(
@@ -24,9 +22,8 @@ $_environments_list = array(
 		'www.sonypictures.com'
 	)
 );
-setEnvironment();
-switch (ENVIRONMENT)
-{
+setEnvironment($_environments_list);
+switch (ENVIRONMENT) {
 	case 'development':
 		define("CDN", "assets/");
 		define("BLOGNAME", "ahdev.tumblr.com");     
@@ -59,11 +56,19 @@ switch (ENVIRONMENT)
 		exit('The application environment is not set correctly.');
 }
 
+$share_blogname = BLOGNAME; 
+$preload = createImagePreload("assets/img");
+$webroot = curPagePath(); 
 
-function setEnvironment() {
+
+
+
+
+
+function setEnvironment($list) {
 	$_host_name = $_SERVER[ 'HTTP_HOST' ];
 	$_this_env = 'development'; // this is the default env
-	foreach ( $_environments_list as $env_name => $env_urls ) {
+	foreach ( $list as $env_name => $env_urls ) {
 		foreach ( $env_urls as $url ) {
 			if ( preg_match( "/{$url}$/", $_host_name ) ) {
 				$_this_env = $env_name; // boom, we found it
@@ -86,3 +91,20 @@ function curPagePath() {
 	}
 	return $fullpath;
 }
+
+function createImagePreload($dir) { 
+    $root = scandir($dir); 
+    foreach($root as $value) { 
+        if($value === '.' || $value === '..') {continue;} 
+        if(is_file("$dir/$value")) {$result[]="$dir/$value";continue;} 
+        foreach(createImagePreload("$dir/$value") as $value) { 
+            $result[]=$value; 
+        } 
+    } 
+	$preload = "\t\t<div style='display: none;''>\n";
+	foreach ($result as $img){
+		$preload .= "\t\t\t<img src='".CDN.str_replace("assets/", "", $img)."' />\n";
+	}
+	$preload .= "\t\t</div>";
+	return $preload;
+} 
