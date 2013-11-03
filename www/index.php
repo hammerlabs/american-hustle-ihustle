@@ -96,8 +96,8 @@ $config = array(
 if (ENVIRONMENT !== "development") {
 ?>
         <div id=""omniturecode"">
-            <script type=""text/javascript"" src=""http://www.sonypictures.com/global/scripts/s_code.js""></script>
-            <script type=""text/javascript"">                                                                                 
+            <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
+            <script type="text/javascript">                                                                                 
                 s.pageName='us:movies:americanhustle:tumblr:ihustle:index.html'
                 s.channel=s.eVar3='us:movies'
                 s.prop3=s.eVar23='us:movies:americanhustle:ihustle'
@@ -110,13 +110,13 @@ if (ENVIRONMENT !== "development") {
 <?php
 } else {
 ?>
-            <script type=""text/javascript"">                                                                                 
-                if (typeof sCode === "undefined"){
-                    sCode={};
-                    sCode.trackPageView = function(){return;}
-                    sCode.trackOutboundClick = function(){return;}
-                }
-            </script>   
+        <script type="text/javascript">                                                                                 
+            if (typeof sCode === "undefined"){
+                sCode={};
+                sCode.trackPageView = function(){return;}
+                sCode.trackOutboundClick = function(){return;}
+            }
+        </script>   
 <?php
 }
 ?>        
