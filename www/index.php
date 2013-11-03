@@ -2,17 +2,57 @@
     "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
     <head>
+
+<?php        
+
+require_once '_settings.php';   
+require_once 'includes/browser_helper.php';    
+require_once 'includes/css_helper.php';    
+
+$config = array(
+    "user_browser" => $user_browser,
+    "device_type" => $device_type,
+    "browser_version" => $device_type,
+    "browser_type" => $browser_type,
+    "user_agent" => $user_agent,
+    "modern_browser" => $modern,
+    "view_port" => $view_port,
+    "site_url" => $url,
+    "cdn" => CDN,
+    "share_tags" => $share_tags,
+    "share_title" => $share_title,
+    "share_content" => $share_content,
+    "share_url" => $share_url,
+    "share_image" => $share_image,
+    "webroot" => $webroot,
+    "environment" => ENVIRONMENT 
+);
+?>      
+    
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>American Hustle | iHustle</title>
+        <title><?php echo $title; ?></title>      
+        <meta name="description" content="<?php echo $desc; ?>">
+        <meta name="keywords" content="<?php echo $keywords; ?>">              
+        <meta name="viewport" content="<?php echo $view_port; ?>">  
+            
+        <meta property="og:title" content="<?php echo $og_title; ?>" />  
+        <meta property="og:description" content="<?php echo $desc; ?>" />
+        <meta property="og:url" content="<?php echo $url; ?>" />
+        <meta property="og:image" name="thumb" content="<?php echo $image; ?>" />  
+        <meta property="og:type" content="movie" />
+        <meta property="og:site_name" content="<?php echo $title; ?>" />  
 
         <link href='http://fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
-        <link href='assets/css/normalize.min.css' rel='stylesheet' type='text/css'>
-        <link href='assets/css/main.css' rel='stylesheet' type='text/css'>
+        <link href='<?php echo CDN;?>css/normalize.min.css' rel='stylesheet' type='text/css'>
+        <link href='<?php echo cssUrl(CDN."css/main.less");?>' rel='stylesheet' type='text/css'>
 
-        <script src="assets/js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
-        <script src="assets/js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
-        <script src="assets/js/libs/jquery.textareaCounter.plugin.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/libs/jquery.textareaCounter.plugin.js" type="text/javascript"></script>  
+        <script type="text/javascript">
+            <?php echo "var config = ". json_encode($config) . ";";?>  
+        </script>  
     </head>
     <body>
         <div id="site_holder">
@@ -48,8 +88,37 @@
                 </div>
             </div>
         </div>
-        <script src="assets/js/libs/TweenMax.min.js" type="text/javascript"></script>  
-        <script src="assets/js/share.js" type="text/javascript"></script>  
-        <script src="assets/js/main.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/libs/TweenMax.min.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/share.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
+
+<?php
+if (ENVIRONMENT !== "development") {
+?>
+        <div id=""omniturecode"">
+            <script type=""text/javascript"" src=""http://www.sonypictures.com/global/scripts/s_code.js""></script>
+            <script type=""text/javascript"">                                                                                 
+                s.pageName='us:movies:americanhustle:tumblr:ihustle:index.html'
+                s.channel=s.eVar3='us:movies'
+                s.prop3=s.eVar23='us:movies:americanhustle:ihustle'
+                s.prop4=s.eVar4='us:americanhustle'
+                s.prop5=s.eVar5='us:movies:blog'
+                s.prop11='us'     
+                var s_code=s.t();if(s_code)document.write(s_code) 
+            </script>   
+        </div> 
+<?php
+} else {
+?>
+            <script type=""text/javascript"">                                                                                 
+                if (typeof sCode === "undefined"){
+                    sCode={};
+                    sCode.trackPageView = function(){return;}
+                    sCode.trackOutboundClick = function(){return;}
+                }
+            </script>   
+<?php
+}
+?>        
     </body>
 </html>
