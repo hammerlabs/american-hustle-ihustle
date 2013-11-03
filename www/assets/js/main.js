@@ -15,7 +15,7 @@
 
         window.tumblrRoot = "http://ahdev.tumblr.com/";
         $Share.init({
-            shareUrl: "http://ww.AmericanHustleMovie.Tumblr.com",
+            shareUrl: "http://www.AmericanHustleMovie.Tumblr.com",
             shareImage: "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg",
             title: "American Hustle",
             content: "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013. http://ww.AmericanHustleMovie.Tumblr.com",
