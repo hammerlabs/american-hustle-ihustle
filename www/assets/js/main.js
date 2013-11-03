@@ -20,10 +20,10 @@
             tags: config.share_tags
         });
 
-        $("#site_holder").queryLoader2({
+        /*$("#site_holder").queryLoader2({
             useOverlay: false,
             cdn: config.cdn
-        });
+        });*/
 
         $('#user_input').textareaCount({
             'maxCharacterSize': 100,
@@ -57,8 +57,10 @@
             }
         });
         $(".submit").click(function(event) {
-            sCode.trackPageView('ihustlesubmitted.html');
-            submitContent();
+            if (window.currentHustle != "" && window.currentHustle != "Please Try Again.") {
+                sCode.trackPageView('ihustlesubmitted.html');
+                submitContent();
+            }
         });
     });
 
@@ -137,6 +139,10 @@
         $(".inputbox").addClass('sample');
         $("a.sample").addClass('selected');
         $("a.sample").html("HIDE SAMPLE");
+        $(".inputbox.sample").click(function(event) {
+            hideSample();
+            $('#user_input').focus();
+        });
     }
 
     function updatePreview() {
