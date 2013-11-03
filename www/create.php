@@ -1,23 +1,80 @@
 <?php
-/*
 
-* the server needs access to the Raleway font found in /assets/fonts/Raleway-Medium.ttf
-* we need to insert the user's text in this first command, converting line breaks to "\n"
+error_reporting(E_ALL);   
+  
+define("CONSUMER_KEY", "CTz2LZ01VUTVhdoib2XM9wDvdE5bphn9wmsi3zyTmYrtmTuMhD");
+define("CONSUMER_SECRET", "hod74WSG3ZLRJs2tdOO0FWRuxt4gRRyxnzJbj2auC9E4FD5iI0");
+define("OAUTH_TOKEN", "ri7IoyC2uNo56yRdXE4qgzAMepQPdaHt28FLEBXYu6kSSb2ixv");
+define("OAUTH_SECRET", "LARTp5dptZN6X6wO2D8bXPMyishfz4nExEm1x3znmIfwjsP1gx"); 
+define("CDN", "http://cdn-dev.triggerglobal.com/sony/americanhustle/gif_generator/cdn/");
 
-convert -background none -fill #ffffff -font RaleWay -pointsize 16 -interline-spacing 22 -density 216 -resample 72 -size 960x420 -gravity South caption:"IF YOU EVER HOLD\nTHE DOOR OPEN FOR SOMEONE\nJUST SO YOU CAN CHECK THEM OUT." label.png
+//define("CDN", "http://stage.sonypictures.com/movies/americanhustle/tumblr/gifgenerator/");    
+//define("CDN", "http://sonypictures.com/movies/americanhustle/tumblr/gifgenerator/");    
+define("BLOGNAME", "ahdev.tumblr.com");     
+//define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
+//define("BLOGNAME", "americanhustlemovie.tumblr.com");            
+     
+$req_url = 'http://www.tumblr.com/oauth/request_token';
+$authurl = 'http://www.tumblr.com/oauth/authorize';
+$acc_url = 'http://www.tumblr.com/oauth/access_token';
+     	
+require_once('im_helper.php');    
+require_once('tumblr_helper.php');    
 
-* that will create an image named label.png and we need to combine that with /assets/img/base-image.png for the final image using this command
+authorizeToken();   
 
-composite -gravity center -geometry +0-90 label.png base-image.png sample2.jpg
+function authorizeToken() {   
 
-* be sure that we store images in the same sort of way we did in machete with a guid or whatever
-* I need to be able to tell Sony what sort of permissions PHP needs to write temp files and final files
+	$tum_oauth = new TumblrOAuth(CONSUMER_KEY, CONSUMER_SECRET);
+	$request_token = $tum_oauth->getRequestToken();
 
-*/
-// the text is passed in the GET
-$text = $_GET["text"];
-//just pass back a relative URL to the root of the site for where you store the user images
-$imageUrl = "assets/img/sample1.jpg";
-header('Content-Type: application/json');
-$arr = array ('url'=>$imageUrl,'text'=>$text);
-echo json_encode($arr);
+	$_SESSION['request_token'] = $token = $request_token['oauth_token'];
+	$_SESSION['request_token_secret'] = $request_token['oauth_token_secret'];
+
+	// Check the HTTP Code.  It should be a 200 (OK), if it's anything else then something didn't work.
+	switch ($tum_oauth->http_code) {
+	  case 200:
+		postImage( createUserImage( $_GET["text"] ) );
+	    break;
+	default:
+	    // Give an error message
+		header('Content-Type: application/json');
+		print( json_encode( $tum_oauth ) );
+	}   
+
+}
+
+function postImage($usercontent) {    
+	$headers = array("Host" => "http://api.tumblr.com/", "Content-type" => "application/x-www-form-urlencoded", "Expect" => "");
+	$params = array("tags" => "iHustle", "data" => array(file_get_contents($usercontent["url"])), "type" => "photo");
+	$blogname = BLOGNAME;    
+	oauth_gen("POST", "http://api.tumblr.com/v2/blog/$blogname/post", $params, $headers);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_USERAGENT, "PHP Uploader Tumblr v1.0");
+	curl_setopt($ch, CURLOPT_URL, "http://api.tumblr.com/v2/blog/$blogname/post");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+
+	curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+	    "Authorization: " . $headers['Authorization'],
+	    "Content-type: " . $headers["Content-type"],
+	    "Expect: ")
+	);
+
+	$params = http_build_query($params);
+
+	curl_setopt($ch, CURLOPT_POST, 1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $params);
+
+	$response = curl_exec($ch);  
+	$response = json_decode( $response );
+	$usercontent['response'] = $response;     
+	if ( isset( $response->meta ) && isset( $response->meta->status ) && $response->meta->status == 201 ) {   
+		$post_id = $response->response->id;
+		$post_url = "http://{$blogname}/post/{$post_id}";
+		$response->response->post_url = $post_url; 
+		$usercontent["postId"] = $post_id;
+		$usercontent["postUrl"] = $post_url;
+	}
+	header('Content-Type: application/json');
+	print( json_encode( $usercontent ) );
+}    
