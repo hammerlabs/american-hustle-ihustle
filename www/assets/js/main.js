@@ -26,7 +26,7 @@
         });*/
 
         $('#user_input').textareaCount({
-            'maxCharacterSize': 100,
+            'maxCharacterSize': 200,
             'originalStyle': 'originalDisplayInfo',
             'warningStyle': 'warningDisplayInfo',
             'warningNumber': 10,

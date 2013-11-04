@@ -20,7 +20,7 @@ function wordWrapAnnotation(&$image, &$draw, $textlines, $maxWidth)
 	        $currentLine = $words[$i];
 	        if($i+1 >= count($words)) {
 	            $lines[] = $currentLine;
-		    	print("1: used all words in line: ".$currentLine."\n");
+		    	//print("1: used all words in line: ".$currentLine."\n");
 	            break;
 	        }
 	        //Check to see if we can add another word to this line

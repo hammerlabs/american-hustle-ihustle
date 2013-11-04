@@ -9,12 +9,19 @@ if ($oauth_response->success === false) {
 	print( json_encode( $oauth_response ) );
 	exit;
 }
-$usercontent = createUserImage( $_GET["text"] );
+$usercontent = createUserImage( cleanData($_GET["text"]) );
 $usercontent["oauth_response"] = $oauth_response;
 $usercontent["post_response"] = postPhoto($usercontent["url"], "#iHustle #AmericanHustle");
 header('Content-Type: application/json');
 print( json_encode( $usercontent ) );
 exit;
+
+function cleanData($str) {
+    $str = trim ($str );
+    $str = urldecode ($str );
+    $str = filter_var($str, FILTER_SANITIZE_STRING,!FILTER_FLAG_STRIP_LOW);
+    return $str ;
+}
 
 function createUserImage($printtext) {
 	$text = new ImagickDraw();

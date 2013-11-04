@@ -7,7 +7,6 @@
 
 require_once '_settings.php';   
 require_once 'includes/browser_helper.php';    
-require_once 'includes/css_helper.php';    
 
 $config = array(
     "user_browser" => $user_browser,
@@ -45,7 +44,7 @@ $config = array(
         <link href='http://fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/normalize.min.css' rel='stylesheet' type='text/css'>
-        <link href='<?php echo cssUrl(CDN."css/main.less");?>' rel='stylesheet' type='text/css'>
+        <link href='<?php echo CDN;?>css/main.css' rel='stylesheet' type='text/css'>
 
         <script src="<?php echo CDN;?>js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
@@ -88,6 +87,22 @@ $config = array(
                 </div>
             </div>
         </div>
+
+        <div style="display: none;">
+            <img src="<?php echo CDN;?>img/base-image.jpg">
+            <img src="<?php echo CDN;?>img/base-image.png">
+            <img src="<?php echo CDN;?>img/facebook.png">
+            <img src="<?php echo CDN;?>img/google.png">
+            <img src="<?php echo CDN;?>img/pinterest.png">
+            <img src="<?php echo CDN;?>img/sample.jpg">
+            <img src="<?php echo CDN;?>img/sample1.jpg">
+            <img src="<?php echo CDN;?>img/textarea-bg.png">
+            <img src="<?php echo CDN;?>img/textarea-error-bg.png">
+            <img src="<?php echo CDN;?>img/textarea-sample-bg.png">
+            <img src="<?php echo CDN;?>img/tumblr.png">
+            <img src="<?php echo CDN;?>img/twitter.png">
+        </div>   
+
         <script src="<?php echo CDN;?>js/libs/TweenMax.min.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/share.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
@@ -119,7 +134,7 @@ if (ENVIRONMENT !== "development") {
         </script>   
 <?php
 }
-echo $preload;
+//echo $preload;
 ?>        
     </body>
 </html>

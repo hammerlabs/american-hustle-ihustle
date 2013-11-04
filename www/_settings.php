@@ -57,7 +57,7 @@ switch (ENVIRONMENT) {
 }
 
 $share_blogname = BLOGNAME; 
-$preload = createImagePreload("assets/img");
+//$preload = createImagePreload("assets/img");
 $webroot = curPagePath(); 
 
 
