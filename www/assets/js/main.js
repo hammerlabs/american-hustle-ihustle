@@ -40,9 +40,12 @@
                     updatePreview();
                     hideSample();
                 }, 10);
-            });
+            }).bind('focus', function(event) {
+                $(this).css('opacity', '1');
+                $(".inputbox").removeClass('error');
+            });;
 
-        $(".sample").click(function(event) {
+        $(".button.sample").click(function(event) {
             if ($(".share_image").hasClass('sample1')) {
                 hideSample();
             } else {
@@ -51,6 +54,15 @@
         });
         $(".submit").click(function(event) {
             if (window.currentHustle != "" && window.currentHustle != "Please Try Again.") {
+                if (hasFilteredWords($('#user_input').val())) {
+                    $('#user_input').val("");
+                    $(".inputbox").addClass('error');
+                    $('#user_input').css('opacity', '0');;
+                    updatePreview();
+                    return;
+                } else {
+                    $(".inputbox").removeClass('error');
+                }
                 sCode.trackPageView('ihustlesubmitted.html');
                 submitContent();
             }
@@ -147,13 +159,6 @@
     }
 
     function updatePreview() {
-        if (hasFilteredWords($('#user_input').val())) {
-            $('#user_input').val("Please Try Again.");
-            $(".inputbox").addClass('error');
-            $(".inputbox").blur();
-        } else {
-            $(".inputbox").removeClass('error');
-        }
         window.currentHustle = $('#user_input').val().toUpperCase();
         $('.preview_text').html($('#user_input').val().replace(/\n/g, "<br/>"));
         return true;
@@ -167,14 +172,5 @@
         }
         return false;
     }
-
-    /*$(".button").mouseenter(function (event){  
-        if (!$(this).hasClass('selected')) TweenMax.to(this, .2, {backgroundColor:"#ffc500", color:"#000", overwrite:2});   
-    }); 
-    
-    $(".button").mouseleave(function (event){    
-        if (!$(this).hasClass('selected')) TweenMax.to(this, .2, {backgroundColor:"#5a5a5a", color:"#d1d1d1", overwrite:2});     
-    }); */
-
 
 }(jQuery));
