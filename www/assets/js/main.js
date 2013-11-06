@@ -11,14 +11,7 @@
         window.currentHustle = "";
         window.currentImageUrl = "";
 
-        window.tumblrRoot = config.share_blogname;
-        $Share.init({
-            shareUrl: config.share_url,
-            shareImage: config.share_image,
-            title: config.share_title,
-            content: config.share_content,
-            tags: config.share_tags
-        });
+        window.tumblrRoot = "http://"+config.share_blogname;
 
         /*$("#site_holder").queryLoader2({
             useOverlay: false,
@@ -26,7 +19,7 @@
         });*/
 
         $('#user_input').textareaCount({
-            'maxCharacterSize': 200,
+            'maxCharacterSize': 150,
             'originalStyle': 'originalDisplayInfo',
             'warningStyle': 'warningDisplayInfo',
             'warningNumber': 10,
@@ -98,7 +91,15 @@
             $("#step2").fadeIn('fast');
         });
 
-        $(".seeall").attr('href', window.tumblrRoot+'tagged/iHustle');
+        $(".seeall").attr('href', window.tumblrRoot+'/tagged/iHustle');
+
+        $Share.init({
+            shareUrl: config.share_url,
+            shareImage: config.share_image,
+            title: config.share_title,
+            content: config.share_content + " " + window.currentImageUrl,
+            tags: config.share_tags
+        });
 
         $Share.options.shareImage = window.currentImageUrl;
         $(".facebook").click(function(event) {

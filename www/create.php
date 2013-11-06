@@ -17,9 +17,9 @@ print( json_encode( $usercontent ) );
 exit;
 
 function cleanData($str) {
-    $str = trim ($str );
-    $str = urldecode ($str );
-    $str = filter_var($str, FILTER_SANITIZE_STRING,!FILTER_FLAG_STRIP_LOW);
+    $str = trim($str);
+    //$str = urldecode($str);
+    //$str = filter_var($str, FILTER_SANITIZE_STRING,!FILTER_FLAG_STRIP_LOW);
     return $str ;
 }
 
