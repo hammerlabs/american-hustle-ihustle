@@ -50,6 +50,7 @@ $config = array(
         <script src="<?php echo CDN;?>js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/libs/jquery.textareaCounter.plugin.js" type="text/javascript"></script>  
+        <script src="<?php echo CDN;?>js/wordlist.js" type="text/javascript"></script>  
         <script type="text/javascript">
             <?php echo "var config = ". json_encode($config) . ";";?>  
         </script>  

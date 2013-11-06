@@ -150,6 +150,7 @@
         if (hasFilteredWords($('#user_input').val())) {
             $('#user_input').val("Please Try Again.");
             $(".inputbox").addClass('error');
+            $(".inputbox").blur();
         } else {
             $(".inputbox").removeClass('error');
         }
@@ -159,9 +160,10 @@
     }
 
     function hasFilteredWords(txt) {
-        var filter = ['ass', 'fuck', 'poop'];
+        var filter = window.wordlist;
         for (var i = 0; i < filter.length; i++) {
-            if (txt.search(new RegExp('\\b' + filter[i] + '\\b', 'g')) > -1) return true;
+            var test = filter[i].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+            if (txt.search(new RegExp(test, 'gi')) > -1) return true;
         }
         return false;
     }
