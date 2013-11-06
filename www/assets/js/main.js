@@ -52,6 +52,10 @@
                 showSample();
             }
         });
+
+        $(".close").click(function(event) {
+            hideSample();
+        });
         $(".submit").click(function(event) {
             if (window.currentHustle != "" && window.currentHustle != "Please Try Again.") {
                 if (hasFilteredWords($('#user_input').val())) {
@@ -151,6 +155,7 @@
         $(".share_image").removeClass('sample');
         $(".share_image").removeClass('sample1');
         $(".preview_holder").show();
+        $(".close").hide();
         $(".inputbox").removeClass('sample');
         $("a.sample").removeClass('selected');
         $("a.sample").html("VIEW SAMPLE");
@@ -160,6 +165,7 @@
         $(".share_image").removeClass('sample');
         $(".share_image").addClass('sample1');
         $(".preview_holder").hide();
+        $(".close").show();
         $(".inputbox").addClass('sample');
         $("a.sample").addClass('selected');
         $("a.sample").html("HIDE SAMPLE");

@@ -56,6 +56,16 @@ a {
 	margin: 0px auto 10px; 
 	text-align: center;
 }
+.close{
+	width: 33px;
+	height: 31px;
+	background-image: url(../img/close.png);
+	cursor: pointer;
+	position: relative;
+	top: 27px;
+	left: 305px;
+	display: none;
+}
 .share_image.sample {
 	background-image: url(../img/sample.jpg);
 }

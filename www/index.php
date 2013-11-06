@@ -64,6 +64,7 @@ $config = array(
                 		<div class="preview_holder">
 	                		<div class="preview_text"></div>
                 		</div>
+                        <div class="close"></div>
                 	</div>
                 	<div class="inputbox">
 	                	<textarea id="user_input" placeholder="Tell us how you hustle..."></textarea>
@@ -92,6 +93,7 @@ $config = array(
         </div>
 
         <div style="display: none;">
+            <img src="<?php echo CDN;?>img/close.jpg">
             <img src="<?php echo CDN;?>img/base-image.jpg">
             <img src="<?php echo CDN;?>img/base-image.png">
             <img src="<?php echo CDN;?>img/facebook.png">
