@@ -18,6 +18,7 @@ $config = array(
     "view_port" => $view_port,
     "site_url" => $url,
     "cdn" => CDN,
+    "share_blogname" => $share_blogname,
     "share_tags" => $share_tags,
     "share_title" => $share_title,
     "share_content" => $share_content,
@@ -75,7 +76,7 @@ $config = array(
                 	hustling...
                 </div>
                 <div id="step2">
-                	<div class="share_image"></div>
+                	<div class="share_image"><img id="user_image" /></div>
                 	<div class="inputbox">Your hustle has been submitted!<br/><br/>Now share it!</div>
                 	<div class="social_holder">
 	                	<span class="social facebook"></span>
@@ -108,9 +109,6 @@ $config = array(
         <script src="<?php echo CDN;?>js/share.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
 
-<?php
-if (ENVIRONMENT !== "development") {
-?>
         <div id="omniturecode">
             <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
             <script type="text/javascript">                                                                                 
@@ -123,19 +121,5 @@ if (ENVIRONMENT !== "development") {
                 var s_code=s.t();if(s_code)document.write(s_code) 
             </script>   
         </div> 
-<?php
-} else {
-?>
-        <script type="text/javascript">                                                                                 
-            if (typeof sCode === "undefined"){
-                sCode={};
-                sCode.trackPageView = function(){return;}
-                sCode.trackOutboundClick = function(){return;}
-            }
-        </script>   
-<?php
-}
-//echo $preload;
-?>        
     </body>
 </html>
