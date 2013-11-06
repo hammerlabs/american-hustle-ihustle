@@ -91,7 +91,7 @@
             $("#step2").fadeIn('fast');
         });
 
-        $(".seeall").attr('href', window.tumblrRoot+'/tagged/iHustle');
+        $(".seeall").attr('href', window.tumblrRoot+'/tagged/iHustle+americanhustle');
 
         $Share.init({
             shareUrl: config.share_url,
