@@ -97,6 +97,7 @@
         console.log( "Submit Success", data );
         // in the response, we should be getting a publicly available URL for the user's image
         window.currentImageUrl = location.href + data.url;
+        window.currentPostUrl = data.post_response.response.response.post_url;
         $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
         
         $("#loading").fadeOut('fast', function() {
@@ -109,7 +110,7 @@
             shareUrl: config.share_url,
             shareImage: config.share_image,
             title: config.share_title,
-            content: config.share_content + " " + window.currentImageUrl,
+            content: config.share_content + " " + window.currentPostUrl,
             tags: config.share_tags
         });
 
