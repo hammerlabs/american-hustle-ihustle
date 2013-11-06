@@ -91,20 +91,30 @@
 
     function submitError(data) {
         console.log( "Submit Fail", data );
+        imageReady(undefined);
     }
 
     function imageReady(data) {
-        console.log( "Submit Success", data );
-        // in the response, we should be getting a publicly available URL for the user's image
-        window.currentImageUrl = location.href + data.url;
-        window.currentPostUrl = data.post_response.response.response.post_url;
-        $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
-        
+        if (data != undefined) {
+            console.log( "Submit Success", data );
+            window.currentImageUrl = location.href + data.url;
+            window.currentPostUrl = data.post_response.response.response.post_url;
+            $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
+        } else {
+            window.currentImageUrl = location.href + "assets/sample.jpg";
+            window.currentPostUrl = location.href + "assets/sample.jpg";
+            $("#step2 .share_image").css('background-image', 'url(../img/assets/sample.jpg)');
+        }
+            
         $("#loading").fadeOut('fast', function() {
             $("#step2").fadeIn('fast');
         });
 
         $(".seeall").attr('href', window.tumblrRoot+'/tagged/iHustle+americanhustle');
+
+        $(".button.back").click(function(event) {
+            location.reload();
+        });
 
         $Share.init({
             shareUrl: config.share_url,

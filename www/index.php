@@ -85,7 +85,8 @@ $config = array(
 	                	<span class="social google"></span>
 	                	<span class="social pinterest"></span>
                 	</div>
-                	<a class="button seeall" target="_parent">SEE ALL</a>
+                    <a class="button seeall" target="_parent">SEE ALL</a>
+                    <a class="button back" target="_parent">CREATE ANOTHER</a>
                 </div>
             </div>
         </div>
