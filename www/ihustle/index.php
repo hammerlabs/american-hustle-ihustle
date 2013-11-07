@@ -93,7 +93,7 @@ $config = array(
         </div>
 
         <div style="display: none;">
-            <img src="<?php echo CDN;?>img/482.gif">
+            <img src="<?php echo CDN;?>img/482.GIF">
             <img src="<?php echo CDN;?>img/close.png">
             <img src="<?php echo CDN;?>img/base-image.jpg">
             <img src="<?php echo CDN;?>img/facebook.png">
