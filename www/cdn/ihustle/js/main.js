@@ -105,9 +105,9 @@
             window.currentPostUrl = data.post_response.response.response.post_url;
             $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
         } else {
-            window.currentImageUrl = location.href + "assets/sample.jpg";
-            window.currentPostUrl = location.href + "assets/sample.jpg";
-            $("#step2 .share_image").css('background-image', 'url(../img/assets/sample.jpg)');
+            window.currentImageUrl = location.href + config.cdn + "img/sample.jpg";
+            window.currentPostUrl = location.href + config.cdn + "img/sample.jpg";
+            $("#step2 .share_image").css('background-image', 'url('+config.cdn+'img/sample.jpg)');
         }
             
         $("#loading").fadeOut('fast', function() {

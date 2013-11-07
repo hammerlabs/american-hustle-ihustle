@@ -74,7 +74,7 @@ $config = array(
                 	<a class="button submit">SUBMIT</a>
                 </div>
                 <div id="loading">
-                	hustling<br/><br/><img src="assets/img/482.GIF" />
+                	hustling<br/><br/><img src="<?php echo CDN;?>img/482.GIF" />
                 </div>
                 <div id="step2">
                 	<div class="share_image"><img id="user_image" /></div>

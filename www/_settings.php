@@ -25,7 +25,7 @@ $_environments_list = array(
 setEnvironment($_environments_list);
 switch (ENVIRONMENT) {
 	case 'development':
-		define("CDN", "assets/");
+		define("CDN", "cdn/ihustle/");
 		define("BLOGNAME", "ahdev.tumblr.com");     
 		define("CONSUMER_KEY", "CTz2LZ01VUTVhdoib2XM9wDvdE5bphn9wmsi3zyTmYrtmTuMhD");
 		define("CONSUMER_SECRET", "hod74WSG3ZLRJs2tdOO0FWRuxt4gRRyxnzJbj2auC9E4FD5iI0");
@@ -34,7 +34,7 @@ switch (ENVIRONMENT) {
 		break;
 
 	case 'testing':
-		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/hustle/");
+		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/ihustle/");
 		define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
 		define("CONSUMER_KEY", "");
 		define("CONSUMER_SECRET", "");
@@ -44,7 +44,7 @@ switch (ENVIRONMENT) {
 
 	case 'production':
 		error_reporting(0);
-		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/tumblr/hustle/");    
+		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/tumblr/ihustle/");    
 		define("BLOGNAME", "americanhustlemovie.tumblr.com");            
 		define("CONSUMER_KEY", "");
 		define("CONSUMER_SECRET", "");
