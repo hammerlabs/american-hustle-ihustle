@@ -25,8 +25,8 @@ $_environments_list = array(
 setEnvironment($_environments_list);
 switch (ENVIRONMENT) {
 	case 'development':
-		define("CDN", "cdn/ihustle/");
-		define("BLOGNAME", "ahdev.tumblr.com");     
+		define("CDN", "../../cdn/ihustle/");
+		define("BLOGNAME", "ahdev.tumblr.com");
 		define("CONSUMER_KEY", "CTz2LZ01VUTVhdoib2XM9wDvdE5bphn9wmsi3zyTmYrtmTuMhD");
 		define("CONSUMER_SECRET", "hod74WSG3ZLRJs2tdOO0FWRuxt4gRRyxnzJbj2auC9E4FD5iI0");
 		define("OAUTH_TOKEN", "ri7IoyC2uNo56yRdXE4qgzAMepQPdaHt28FLEBXYu6kSSb2ixv");
