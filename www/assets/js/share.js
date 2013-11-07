@@ -39,9 +39,8 @@ var $Share = {
 	twitter: function(obj) {
 		if (obj) $.extend(true, this.options, obj);
 		window.open(
-			'https://twitter.com/share?text=' +
-			encodeURIComponent( this.options.content ) +
-			'&url=' + encodeURIComponent( this.options.shareUrl ),
+			'https://twitter.com/intent/tweet?text=' +
+			encodeURIComponent( this.options.content ),
 			'share',
 			'toolbar=0,status=0,width=548,height=325'
 		);
