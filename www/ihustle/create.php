@@ -26,7 +26,7 @@ function cleanData($str) {
 function createUserImage($printtext) {
 	$text = new ImagickDraw();
 	$text->setGravity( Imagick::GRAVITY_SOUTH );
-	$text->setFont( "assets/fonts/Raleway-Medium.ttf" );
+	$text->setFont( "fonts/Raleway-Medium.ttf" );
 	$text->setFontSize( 16 );
 	$text->setFillColor( 'white' );
 	$canvas = new Imagick();
@@ -37,7 +37,7 @@ function createUserImage($printtext) {
 	annotateLineSpaced($canvas, $text, 0, 0, 0, array_reverse($printtext), 27);
 	$canvas->drawImage( $text );
 	$base = new Imagick();
-	$base->readImage( "assets/img/base-image.png" ); 
+	$base->readImage( "base-image.png" ); 
 	$base->compositeImage( $canvas, Imagick::COMPOSITE_DEFAULT, 24, 24 );
 	$base->setImageFormat('jpeg');
 	$imageName = 'ah_ihustle_'.date("U").'.jpg';
