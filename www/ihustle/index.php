@@ -5,7 +5,7 @@
 
 <?php        
 
-require_once '_settings.php';   
+require_once 'settings.php';   
 require_once 'includes/browser_helper.php';    
 
 $config = array(

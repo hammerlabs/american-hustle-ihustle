@@ -1,17 +1,17 @@
 <?php
-require_once('_settings.php');    
+require_once('settings.php');    
 require_once('includes/im_helper.php');    
 require_once('includes/tumblr_helper.php');    
 
 $oauth_response = authorizeToken();
-if ($oauth_response->success === false) {
+if (!is_array($oauth_response) && $oauth_response->success === false) {
 	header('Content-Type: application/json');
 	print( json_encode( $oauth_response ) );
 	exit;
 }
 $usercontent = createUserImage( cleanData($_GET["text"]) );
 $usercontent["oauth_response"] = $oauth_response;
-$usercontent["post_response"] = postPhoto($usercontent["url"], "#iHustle #AmericanHustle");
+$usercontent["post_response"] = postPhoto($usercontent["url"], $share_tags);
 header('Content-Type: application/json');
 print( json_encode( $usercontent ) );
 exit;
