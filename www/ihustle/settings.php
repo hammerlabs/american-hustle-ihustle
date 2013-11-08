@@ -8,7 +8,7 @@ $image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg";
 $facebook_url = "https://www.facebook.com/AmericanHustle";    
 $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adams, Christian Bale, Jeremy Renner, Jennifer Lawrence, David O. Russell, Eric Warren Singer";    
 $og_title = "American Hustle | iHustle | Sony Pictures";
-$share_tags = "#iHustle #AmericanHustle";    
+$share_tags = "#iHustle";    
 $share_title = "American Hustle";    
 $share_content = "This is how #iHustle. Tell the world how you hustle at www.AmericanHustleMovie.Tumblr.com. In theaters December 2013."; 
 $share_url = "http://www.AmericanHustleMovie.Tumblr.com"; 
@@ -22,6 +22,8 @@ $_environments_list = array(
 		'www.sonypictures.com'
 	)
 );
+
+
 setEnvironment($_environments_list);
 switch (ENVIRONMENT) {
 	case 'development':
@@ -36,10 +38,10 @@ switch (ENVIRONMENT) {
 	case 'testing':
 		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/ihustle/");
 		define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
-		define("CONSUMER_KEY", "");
-		define("CONSUMER_SECRET", "");
-		define("OAUTH_TOKEN", "");
-		define("OAUTH_SECRET", ""); 
+		define("CONSUMER_KEY", "VTrFOn4QnQvbFZ8T99yzbA1uEbITTvjZOxHhdBJ6b5sZvTElwe");
+		define("CONSUMER_SECRET", "dRtvkuC0CrNNFelkomO7h1kiNwHQBW0BhzNWUQ4j7QFRt0v9Qw");
+		define("OAUTH_TOKEN", "ojLMdByU0IyDKCaMZHyq84Tifg8DxoMQzaYnfvlKsizqu0GSZs");
+		define("OAUTH_SECRET", "EYBF7qfIfzbEgbj1Aw3Dq2XosPha4YWGfDh9ktqBJt6SO0exti"); 
 		break;
 
 	case 'production':

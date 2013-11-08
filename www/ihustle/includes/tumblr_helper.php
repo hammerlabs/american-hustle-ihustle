@@ -26,6 +26,17 @@ function postPhoto($url, $tags) {
     $blogname = BLOGNAME;    
     oauth_gen("POST", "http://api.tumblr.com/v2/blog/$blogname/post", $params, $headers);
     $ch = curl_init();
+    if (ENVIRONMENT != "development") {
+        if(isset($_SERVER['HTTP_FRONT_END_HTTPS'])  && (strcasecmp($_SERVER['HTTP_FRONT_END_HTTPS'],"ON")==0)){
+            $proxyport=$_SERVER['HTTPS_PROXY'];
+        } else {
+            $proxyport=$_SERVER['HTTP_PROXY'];
+        }        
+        $parseArray=parse_url($proxyport);
+        $port=$parseArray['port'];
+        $proxy=$parseArray['host'];
+        curl_setopt($ch, CURLOPT_PROXY, $proxy.':'.$port);
+    }
     curl_setopt($ch, CURLOPT_USERAGENT, "PHP Uploader Tumblr v1.0");
     curl_setopt($ch, CURLOPT_URL, "http://api.tumblr.com/v2/blog/$blogname/post");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );

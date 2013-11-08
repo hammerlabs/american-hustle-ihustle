@@ -243,6 +243,17 @@ class TumblrOAuth {
   function http($url, $method, $postfields = NULL) {
     $this->http_info = array();
     $ci = curl_init();
+    if (ENVIRONMENT != "development") {
+      if(isset($_SERVER['HTTP_FRONT_END_HTTPS'])  && (strcasecmp($_SERVER['HTTP_FRONT_END_HTTPS'],"ON")==0)) {
+        $proxyport=$_SERVER['HTTPS_PROXY'];
+      } else {
+        $proxyport=$_SERVER['HTTP_PROXY'];
+      }
+      $parseArray=parse_url($proxyport);
+      $port=$parseArray['port'];
+      $proxy=$parseArray['host'];
+      curl_setopt($ci, CURLOPT_PROXY, $proxy.':'.$port);
+    }
     /* Curl settings */
     curl_setopt($ci, CURLOPT_USERAGENT, $this->useragent);
     curl_setopt($ci, CURLOPT_CONNECTTIMEOUT, $this->connecttimeout);
