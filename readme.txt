@@ -18,7 +18,7 @@
   * update the preview, be sure its working ok, then click save and then the back arrow to exit
   * create another page now by clicking the "Add a page" button again
   * in the white form that comes up from there, click the button next to "show a link to this page" and enter "ihustle gallery"
-  * in the second row, set the url to be {blog name}/tagged/ihustle+americanhustle
+  * in the second row, set the url to be {blog name}/tagged/ihustle
   * leave page title blank
   * in the content region, just enter a period, this page is a special/magic page and preview won't work
   * click save and then the back arrow to exit
