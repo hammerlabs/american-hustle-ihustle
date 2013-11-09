@@ -47,7 +47,7 @@ $config = array(
         <link href='<?php echo CDN;?>css/normalize.min.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/main.css' rel='stylesheet' type='text/css'>
 
-        <script src="<?php echo CDN;?>js/libs/jquery-1.10.1.min.js" type="text/javascript"></script>  
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/libs/jquery.queryloader2.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/libs/jquery.textareaCounter.plugin.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/wordlist.js" type="text/javascript"></script>  

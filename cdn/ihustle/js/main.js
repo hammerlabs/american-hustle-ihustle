@@ -185,7 +185,7 @@
         var filter = window.wordlist;
         for (var i = 0; i < filter.length; i++) {
             var test = filter[i].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-            if (txt.search(new RegExp('\b'+test, 'gi')) > -1) {
+            if (txt.search(new RegExp(test, 'gi')) > -1) {
                 console.log("word filter: " + test);
                 return true;
             }
