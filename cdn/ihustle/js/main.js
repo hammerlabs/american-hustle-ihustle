@@ -57,6 +57,7 @@
             hideSample();
         });
         $(".submit").click(function(event) {
+        	window.currentHustle = $.trim($('#user_input').val());
             if (window.currentHustle != "" && window.currentHustle != "Please Try Again.") {
                 if (hasFilteredWords($('#user_input').val())) {
                     $('#user_input').val("");
@@ -69,6 +70,12 @@
                 }
                 sCode.trackPageView('ihustlesubmitted.html');
                 submitContent();
+            } else if (window.currentHustle == "") {
+                $('#user_input').val("");
+                $(".inputbox").addClass('error');
+                $('#user_input').css('opacity', '0');;
+                updatePreview();
+                return;
             }
         });
     });
