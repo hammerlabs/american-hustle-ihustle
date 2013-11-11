@@ -149,7 +149,7 @@
             $Share.google();
         });
         $(".pinterest").click(function(event) {
-            sCode.trackOutboundClick("www.pintrest.com","postpintrest_button");
+            sCode.trackOutboundClick("www.pintrest.com","postpinterest_button");
             $Share.pinterest();
         });
         $(".tumblr").click(function(event) {
