@@ -69,9 +69,10 @@ $config = array(
                 	<div class="inputbox">
 	                	<textarea id="user_input" placeholder="Tell us how you hustle..."></textarea>
                 	</div>
-                	<div class="info">Please check your message before submitting.</div>
+                	<!--div class="info">Please check your message before submitting.</div-->
+                    <div class="legal">By adding text and hitting “SUBMIT” below, I understand that my text may appear in the iHustle Gallery of this page, I certify that I have read and agree to this iHustle feature’s <a class="terms" href="http://www.sonypictures.net/corp/tos.html" target="_blank">Terms of Use</a>, I understand that my text is a “User Submission” and I specifically represent that it was written solely by me and is not offensive or otherwise in violation of such terms.</div>
+                    <a class="button submit">SUBMIT</a>
                 	<a class="button sample">VIEW SAMPLE</a>
-                	<a class="button submit">SUBMIT</a>
                 </div>
                 <div id="loading">
                 	hustling<br/><br/><img src="<?php echo CDN;?>img/482.GIF" />
