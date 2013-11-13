@@ -5,6 +5,24 @@
         console={};
         console.log = function(){return;}
     }
+	var trackingScriptLoaded = false;
+	var trackingInit		 = false;
+	function tryAndTrack(type,url,id){
+		if(trackingScriptLoaded){
+			if(type == 'trackOutboundClick'){
+				
+				sCode.trackOutboundClick(url,id);
+			}else if(type == 'pageView'){
+				
+			
+				sCode.trackPageView(url);
+			}
+		}else{
+			
+			setTimeout(function(){tryAndTrack(viewName)},100 );
+		}
+		
+	}
 
     $(document).ready(function() {
 
@@ -43,8 +61,11 @@
             }).bind('focus', function(event) {
                 $(this).css('opacity', '1');
                 $(".inputbox").removeClass('error');
-            });;
-
+            });
+			
+	
+		
+			
         $(".button.sample").click(function(event) {
             if ($(".share_image").hasClass('sample1')) {
                 hideSample();
@@ -68,7 +89,39 @@
                 } else {
                     $(".inputbox").removeClass('error');
                 }
-                sCode.trackPageView('ihustlesubmitted.html');
+                var timeoutHolder;
+             
+				if(!trackingInit){	
+					trackingInit = true;
+					$.ajax({
+						url: 'http://www.sonypictures.com/global/scripts/s_code.js',
+						dataType: "script",
+						success: function(){						
+							s.pageName='us:movies:americanhustle:tumblr:ihustle:ihustlesubmitted.html'
+			                s.channel=s.eVar3='us:movies'
+			                s.prop3=s.eVar23='us:movies:americanhustle:ihustle'
+			                s.prop4=s.eVar4='us:americanhustle'
+			                s.prop5=s.eVar5='us:movies:blog'
+			                s.prop11='us'     
+			                var s_code=s.t();if(s_code)document.write(s_code); 
+							
+							trackingScriptLoaded = true;
+						}
+					});
+					
+				}else{
+					tryAndTrack('pageView','ihustlesubmitted.html');
+					
+				}
+				
+				
+					
+					
+					
+					
+				
+            
+               
                 submitContent();
             } else if (window.currentHustle == "") {
                 $('#user_input').val("");
@@ -116,6 +169,16 @@
             window.currentPostUrl = location.href + config.cdn + "img/sample.jpg";
             $("#step2 .share_image").css('background-image', 'url('+config.cdn+'img/sample.jpg)');
         }
+            
+        $("#loading").fadeOut('fast', function() {
+            $("#step2").fadeIn('fast');
+        });
+
+        $(".button.back").click(function(event) {
+        	tryAndTrack('pageView','create_another.html');
+            location.reload();
+            
+        });
 
         $Share.init({
             shareUrl: config.share_url,
@@ -124,36 +187,29 @@
             content: config.share_content + " " + window.currentPostUrl,
             tags: config.share_tags
         });
-            
-        $("#loading").fadeOut('fast', function() {
-            $("#step2").fadeIn('fast');
-        });
 
         $(".seeall").attr('href', window.tumblrRoot+'/tagged/'+config.share_tags.replace(/#/g,"").replace(/ /g, "+"));
-
-        $(".button.back").click(function(event) {
-            location.reload();
-        });
-
         $Share.options.shareImage = window.currentImageUrl;
         $(".facebook").click(function(event) {
-            sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
+        	tryAndTrack('trackOutboundClick',"www.facebook.com","postfacebook_button");
+           
             $Share.facebook();
         });
         $(".twitter").click(function(event) {
-            sCode.trackOutboundClick("www.twitter.com","posttwitter_button");
+        	tryAndTrack('trackOutboundClick',"www.twitter.com","posttwitter_button");
+    
             $Share.twitter();
         });
         $(".google").click(function(event) {
-            sCode.trackOutboundClick("www.twitter.com","postgoogleplus_button");
+        	tryAndTrack('trackOutboundClick',"www.google.com","postgoogleplus_button");
             $Share.google();
         });
         $(".pinterest").click(function(event) {
-            sCode.trackOutboundClick("www.pintrest.com","postpinterest_button");
+        	tryAndTrack('trackOutboundClick',"www.pintrest.com","postpinterest_button");
             $Share.pinterest();
         });
-        $(".tumblr").click(function(event) {
-            sCode.trackOutboundClick("www.tumblr.com","posttumblr_button");
+        $(".tumblr").click(function(event) {	
+      	   tryAndTrack('trackOutboundClick',"www.tumblr.com","posttumblr_button");
             $Share.tumblr();
         });
     }
@@ -192,7 +248,7 @@
         var filter = window.wordlist;
         for (var i = 0; i < filter.length; i++) {
             var test = filter[i].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-            if (txt.search(new RegExp("\\b" + test + "\\b", 'gi')) > -1) {
+            if (txt.search(new RegExp(test, 'gi')) > -1) {
                 console.log("word filter: " + test);
                 return true;
             }
