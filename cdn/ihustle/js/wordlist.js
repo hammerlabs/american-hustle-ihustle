@@ -55,7 +55,7 @@ window.wordlist = [
 	'jiz',
 	'ahole',
 	'kkk',
-	'alabama hot pocket ',
+	'alabama hot pocket',
 	'kuk',
 	'albondigas',
 	'kum',

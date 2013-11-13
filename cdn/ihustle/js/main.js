@@ -116,16 +116,6 @@
             window.currentPostUrl = location.href + config.cdn + "img/sample.jpg";
             $("#step2 .share_image").css('background-image', 'url('+config.cdn+'img/sample.jpg)');
         }
-            
-        $("#loading").fadeOut('fast', function() {
-            $("#step2").fadeIn('fast');
-        });
-
-        $(".seeall").attr('href', window.tumblrRoot+'/tagged/iHustle+americanhustle');
-
-        $(".button.back").click(function(event) {
-            location.reload();
-        });
 
         $Share.init({
             shareUrl: config.share_url,
@@ -133,6 +123,16 @@
             title: config.share_title,
             content: config.share_content + " " + window.currentPostUrl,
             tags: config.share_tags
+        });
+            
+        $("#loading").fadeOut('fast', function() {
+            $("#step2").fadeIn('fast');
+        });
+
+        $(".seeall").attr('href', window.tumblrRoot+'/tagged/'+config.share_tags.replace(/#/g,"").replace(/ /g, "+"));
+
+        $(".button.back").click(function(event) {
+            location.reload();
         });
 
         $Share.options.shareImage = window.currentImageUrl;
@@ -192,7 +192,7 @@
         var filter = window.wordlist;
         for (var i = 0; i < filter.length; i++) {
             var test = filter[i].replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
-            if (txt.search(new RegExp(test, 'gi')) > -1) {
+            if (txt.search(new RegExp("\\b" + test + "\\b", 'gi')) > -1) {
                 console.log("word filter: " + test);
                 return true;
             }

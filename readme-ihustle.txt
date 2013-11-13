@@ -1,7 +1,7 @@
 * place the contents of the /www folder in the Apache/PHP server's web root 
 * the contents of the /cdn folder can be placed on the CDN web root
 * new images are saved to the www/ihustle/user_images folder and PHP will need permissions to write files there
-* the www/ihustle/_settings.php file has all teh relevant configuration info centralized in it, but you'll likely only need to change the test and production Tumblr settings for CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_SECRET
+* the www/ihustle/settings.php file has all teh relevant configuration info centralized in it, but you'll likely only need to change the test and production Tumblr settings for CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_SECRET
 * if the CDN paths have changed from what you sent me, you can edit them here too
 
 * installing this on the Tumblr theme requires the following steps:
@@ -25,8 +25,8 @@
 
 if you don't have a CONSUMER_KEY, CONSUMER_SECRET, OAUTH_TOKEN, OAUTH_SECRET:
   * Register the Application in Tumblr: http://www.tumblr.com/oauth/apps
-  * Add OAuth Consumer Key and Secret Key to www/ihustle/_settings.php variables
+  * Add OAuth Consumer Key and Secret Key to www/ihustle/settings.php variables
   * edit connect.php to have the keys as well and then set the URL to $callback_url
   * Generate the Token by loading connect.php into your browser
   * Load the connect.php in the browser which will load callback.php and provide the tokens you will need.
-  * Add new tokens to the variables to www/ihustle/_settings.php
+  * Add new tokens to the variables to www/ihustle/settings.php
