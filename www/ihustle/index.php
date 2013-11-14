@@ -78,7 +78,7 @@ $config = array(
                 	hustling<br/><br/><img src="<?php echo CDN;?>img/482.GIF" />
                 </div>
                 <div id="step2">
-                	<div class="share_image"><img id="user_image" /></div>
+                	<div class="share_image"></div>
                 	<div class="inputbox">Your hustle has been submitted!<br/><br/>Now share it!</div>
                 	<div class="social_holder">
 	                	<span class="social facebook"></span>
