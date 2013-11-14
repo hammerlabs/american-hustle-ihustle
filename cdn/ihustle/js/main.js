@@ -137,7 +137,7 @@
         $("#step1").fadeOut('fast', function() {
             $("#loading").fadeIn('fast', function() {
                 $("#loading").fadeIn('fast', function() {
-                    $.getJSON( "create.php", {text: window.currentHustle} )
+                    $.getJSON( "create.php", {text: window.currentHustle.toUpperCase()} )
                         .done(function( json ) {
                             if (json.url) {
                                 imageReady(json);
