@@ -78,7 +78,8 @@
             hideSample();
         });
         $(".submit").click(function(event) {
-        	window.currentHustle = $.trim($('#user_input').val());
+        	hideSample();
+            window.currentHustle = $.trim($('#user_input').val());
             if (window.currentHustle != "" && window.currentHustle != "Please Try Again.") {
                 if (hasFilteredWords($('#user_input').val())) {
                     $('#user_input').val("");
