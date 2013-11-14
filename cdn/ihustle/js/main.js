@@ -25,7 +25,7 @@
 	}
 
     $(document).ready(function() {
-
+        $('#user_input').val("");
         window.currentHustle = "";
         window.currentImageUrl = "";
 
