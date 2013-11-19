@@ -42,7 +42,9 @@ if ($image!="" && $status!=""){
       ),
       'multipart' => true,
     ));
-    echo "Sharing to Twitter completed.";
+
+    header("Location: " . "twitter_success.php");
+   
   }
   else{
    var_dump( $tmhOAuth->response);
