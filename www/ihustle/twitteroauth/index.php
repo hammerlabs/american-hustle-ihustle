@@ -45,6 +45,7 @@ if ($image!="" && $status!=""){
     echo "Sharing to Twitter completed.";
   }
   else{
+   var_dump( $tmhOAuth->response);
     echo "Error: You need to authorize our app at twitter to share.";
   }
 }
