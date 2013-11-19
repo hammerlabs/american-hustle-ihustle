@@ -18,8 +18,8 @@ class tmhOAuthIHustle extends tmhOAuth {
       array(
 
         // change the values below to ones for your application
-        'consumer_key'    => 'b5SgSCBxWyhao6NzykdrQ',
-        'consumer_secret' => 'PjzQQxPrEazIlk3AyUfpxZ1AvFbbhVIkiS4pETfJU'
+        'consumer_key'    => TWITTER_CONSUMER_KEY,
+        'consumer_secret' => TWITTER_CONSUMER_SECRET
       ),
       $config
     );

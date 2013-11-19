@@ -33,6 +33,8 @@ switch (ENVIRONMENT) {
 		define("CONSUMER_SECRET", "hod74WSG3ZLRJs2tdOO0FWRuxt4gRRyxnzJbj2auC9E4FD5iI0");
 		define("OAUTH_TOKEN", "ri7IoyC2uNo56yRdXE4qgzAMepQPdaHt28FLEBXYu6kSSb2ixv");
 		define("OAUTH_SECRET", "LARTp5dptZN6X6wO2D8bXPMyishfz4nExEm1x3znmIfwjsP1gx"); 
+		define("TWITTER_CONSUMER_KEY", "b5SgSCBxWyhao6NzykdrQ"); 
+		define("TWITTER_CONSUMER_SECRET", "PjzQQxPrEazIlk3AyUfpxZ1AvFbbhVIkiS4pETfJU"); 
 		break;
 
 	case 'testing':
@@ -42,6 +44,8 @@ switch (ENVIRONMENT) {
 		define("CONSUMER_SECRET", "dRtvkuC0CrNNFelkomO7h1kiNwHQBW0BhzNWUQ4j7QFRt0v9Qw");
 		define("OAUTH_TOKEN", "ojLMdByU0IyDKCaMZHyq84Tifg8DxoMQzaYnfvlKsizqu0GSZs");
 		define("OAUTH_SECRET", "EYBF7qfIfzbEgbj1Aw3Dq2XosPha4YWGfDh9ktqBJt6SO0exti"); 
+		define("TWITTER_CONSUMER_KEY", "b5SgSCBxWyhao6NzykdrQ"); 
+		define("TWITTER_CONSUMER_SECRET", "PjzQQxPrEazIlk3AyUfpxZ1AvFbbhVIkiS4pETfJU"); 
 		break;
 
 	case 'production':
@@ -52,6 +56,8 @@ switch (ENVIRONMENT) {
 		define("CONSUMER_SECRET", "");
 		define("OAUTH_TOKEN", "");
 		define("OAUTH_SECRET", ""); 
+		define("TWITTER_CONSUMER_KEY", "b5SgSCBxWyhao6NzykdrQ"); 
+		define("TWITTER_CONSUMER_SECRET", "PjzQQxPrEazIlk3AyUfpxZ1AvFbbhVIkiS4pETfJU"); 
 		break;
 
 	default:
