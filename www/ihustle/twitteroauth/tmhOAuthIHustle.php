@@ -1,32 +1,7 @@
 <?php
 
 /**
-* Base file for tmhOAuthExamples. This class extends tmhOAuth which means
-* it can do everything tmhOAuth does. All examples implement this class as
-* opposed to tmhOAuth directly.
 *
-* In production you shouldn't use this file, but you could use the idea of
-* extended tmhOAuth with any includes or helper functions you might want
-* for all your scripts.
-*
-* Although this uses a static user_token and user_secret, you can always
-* set them at runtime from a database or local cache or other user tokens/secrets
-* that users have allowed you to use on their behalf.
-*
-* Instructions:
-* 1) Ensure you have tmhOAuth checked out or installed via composer.
-* 2) If you don't have one already, create a Twitter application on
-*      https://dev.twitter.com/apps
-* 3) From the application details page copy the consumer key and consumer
-*      secret into the place in this code marked with (YOUR_CONSUMER_KEY
-*      and YOUR_CONSUMER_SECRET)
-* 4) From the application details page copy the access token and access token
-*      secret into the place in this code marked with (A_USER_TOKEN
-*      and A_USER_SECRET)
-* 5) In a terminal or on a server run any of the example scripts:
-*      php verify_credentials.php
-*
-* @author themattharris
 */
 
 define('TMH_INDENT', 25);

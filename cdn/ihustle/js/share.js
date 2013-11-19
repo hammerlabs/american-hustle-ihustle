@@ -37,6 +37,7 @@ var $Share = {
 		);
 	},
 	twitter: function(obj) {
+		/*
 		if (obj) $.extend(true, this.options, obj);
 		window.open(
 			'https://twitter.com/intent/tweet?text=' +
@@ -44,6 +45,16 @@ var $Share = {
 			'share',
 			'toolbar=0,status=0,width=548,height=325'
 		);
+		*/
+		if (obj) $.extend(true, this.options, obj);
+		window.open(
+			'/www/ihustle/twitteroauth/index.php' +
+			  '?img='+encodeURIComponent( '../'+this.options.shareImageFile )+
+			  '&status='+encodeURIComponent( this.options.twitterContent ),
+			'share',
+			'toolbar=0,status=0,width=548,height=325'
+		);
+
 	},
 	facebook: function(obj) {
 		if (obj) $.extend(true, this.options, obj);

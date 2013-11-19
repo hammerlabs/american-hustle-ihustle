@@ -162,10 +162,12 @@
     function imageReady(data) {
         if (data != undefined) {
             console.log( "Submit Success", data );
+            window.currentImageFile= data.url;
             window.currentImageUrl = location.href + data.url;
             window.currentPostUrl = data.post_response.response.response.post_url;
             $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
         } else {
+            window.currentImageFile= config.cdn + "img/sample.jpg";
             window.currentImageUrl = location.href + config.cdn + "img/sample.jpg";
             window.currentPostUrl = location.href + config.cdn + "img/sample.jpg";
             $("#step2 .share_image").css('background-image', 'url('+config.cdn+'img/sample.jpg)');
@@ -182,15 +184,18 @@
         });
 
         $Share.init({
+            shareImageFile:"",
             shareUrl: config.share_url,
             shareImage: config.share_image,
             title: config.share_title,
+            twitterContent: config.share_content,
             content: config.share_content + " " + window.currentPostUrl,
             tags: config.share_tags
         });
 
         $(".seeall").attr('href', window.tumblrRoot+'/tagged/'+config.share_tags.replace(/#/g,"").replace(/ /g, "+"));
         $Share.options.shareImage = window.currentImageUrl;
+        $Share.options.shareImageFile = window.currentImageFile;
         $(".facebook").click(function(event) {
         	tryAndTrack('trackOutboundClick',"www.facebook.com","postfacebook_button");
            
