@@ -100,6 +100,7 @@ a.terms, a.terms:visited, a.terms:active {
 	height: 368px;
 	background-image: url(../img/base-image.jpg);
 	float: left;
+	background-size: contain;
 }
 .inputbox.sample {
 	background-image: url(../img/textarea-sample-bg.png);

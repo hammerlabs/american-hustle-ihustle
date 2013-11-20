@@ -49,12 +49,12 @@ $config = array(
 
     </head>
     <body>
-        <h2 style="color:white;">Shared to Twitter successfully</h1>
+        <!--h2 style="color:white;">Shared to Twitter successfully</h1-->
         <script type="text/javascript">
             setTimeout(function(){
                 window.close();
             }
-            ,5000);
+            ,1000);
         </script>
     </body>
 </html>
