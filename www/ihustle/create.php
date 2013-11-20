@@ -43,7 +43,6 @@ function createUserImage($printtext) {
 	$base->setImageFormat('jpeg');
 	$imageName = 'ah_ihustle_'.date("U").'.jpg';
 	$imageUrl = 'user_images/'.$imageName;
-	$base->resizeImage(1024, 1024, imagick::FILTER_LANCZOS, 0.9);
 	$base->writeImage($imageUrl);
 	$base->clear(); 
 	$canvas->clear(); 
