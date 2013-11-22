@@ -8,7 +8,7 @@ var $Share = {
 		window.open(
 			'//plus.google.com/share?' +
 			'url=' + encodeURIComponent( this.options.shareUrl ),
-			'share',
+			'share_google',
 			'toolbar=0,status=0,width=548,height=325'
 		);
 	},
@@ -19,7 +19,7 @@ var $Share = {
 			'url=' + encodeURIComponent( this.options.shareUrl ) +
 			'&media=' + encodeURIComponent( this.options.shareImage ) +
 			'&description=' + encodeURIComponent( this.options.content ),
-			'share-photo',
+			'share_pinterest',
 			'toolbar=0,status=0,width=548,height=325'
 		);
 	},
@@ -32,7 +32,7 @@ var $Share = {
 			"&tags=" + encodeURIComponent( this.options.tags );
 		window.open(
 			tumblr_share,
-			'share-photo',
+			'share_tumblr',
 			'toolbar=0,status=0,width=430,height=450'
 		);
 	},
@@ -42,16 +42,16 @@ var $Share = {
 		window.open(
 			'https://twitter.com/intent/tweet?text=' +
 			encodeURIComponent( this.options.content ),
-			'share',
+			'share_twitter',
 			'toolbar=0,status=0,width=548,height=325'
 		);
 		*/
 		if (obj) $.extend(true, this.options, obj);
 		window.open(
 			'/movies/americanhustle/tumblr/ihustle/twitteroauth/index.php' +
-			  '?img='+encodeURIComponent( '../'+this.options.shareImageFile )+
-			  '&status='+encodeURIComponent( this.options.twitterContent ),
-			'share',
+			'?img='+encodeURIComponent( '../'+this.options.shareImageFile )+
+			'&status='+encodeURIComponent( this.options.twitterContent ),
+			'share_twitter',
 			'toolbar=0,status=0,width=548,height=325'
 		);
 
@@ -64,7 +64,7 @@ var $Share = {
 			'&p[title]=' + encodeURIComponent( this.options.title ) +
 			'&p[images][0]=' + encodeURIComponent( this.options.shareImage ) +
 			'&p[summary]=' + encodeURIComponent( this.options.content ),
-			'sharer',
+			'share_facebook',
 			'toolbar=0,status=0,width=548,height=325'
 		);
 	}
