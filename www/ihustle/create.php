@@ -39,7 +39,7 @@ function createUserImage($printtext) {
 	$canvas->drawImage( $text );
 	$base = new Imagick();
 	$base->readImage( "base-big.png" ); 
-	$base->compositeImage( $canvas, Imagick::COMPOSITE_DEFAULT, 67, 40 );
+	$base->compositeImage( $canvas, Imagick::COMPOSITE_DEFAULT, 67, 30 );
 	$base->setImageFormat('jpeg');
 	$imageName = 'ah_ihustle_'.date("U").'.jpg';
 	$imageUrl = 'user_images/'.$imageName;
