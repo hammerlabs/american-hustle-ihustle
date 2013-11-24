@@ -46,9 +46,6 @@ switch (ENVIRONMENT) {
 		exit('The application environment is not set correctly.');
 }
 
-$share_blogname = BLOGNAME; 
-$webroot = curPagePath(); 
-
 function setEnvironment($list) {
 	$_host_name = $_SERVER[ 'HTTP_HOST' ];
 	$_this_env = 'development'; // this is the default env
