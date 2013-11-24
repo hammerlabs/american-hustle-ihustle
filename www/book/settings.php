@@ -48,3 +48,17 @@ switch (ENVIRONMENT) {
 
 $share_blogname = BLOGNAME; 
 $webroot = curPagePath(); 
+
+function setEnvironment($list) {
+	$_host_name = $_SERVER[ 'HTTP_HOST' ];
+	$_this_env = 'development'; // this is the default env
+	foreach ( $list as $env_name => $env_urls ) {
+		foreach ( $env_urls as $url ) {
+			if ( preg_match( "/{$url}$/", $_host_name ) ) {
+				$_this_env = $env_name; // boom, we found it
+				break 2;
+			}
+		}
+	}
+	define( 'ENVIRONMENT', $_this_env );
+}
