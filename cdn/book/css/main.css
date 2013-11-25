@@ -17,6 +17,7 @@ button:focus {
 	width: 864px;
 	height: 628px;
 	margin: auto;
+	margin-top: 26px;
 	text-align: center;
 	/*position: fixed;*/
 }

@@ -37,8 +37,9 @@ $(document).ready(function(){
 
     $("#bb-bookblock").bookblock( {
                 speed : 800,
-                shadowSides : 0.8,
-                shadowFlip : 0.7
+                shadows: false
+                /*shadowSides : 0.8,
+                shadowFlip : 0.7*/
             } );
 
     $(".bb-item a").on( 'click touchstart', function() {
@@ -57,16 +58,22 @@ $(document).ready(function(){
         $("#bb-bookblock").bookblock( 'next' );
    });
 
+    window.insideBounce = new TimelineMax({repeat:-1, repeatDelay:1});
+    window.insideBounce.to($(".look_inside"), .2, {top: "-10", delay: 1});
+    window.insideBounce.to($(".look_inside"), .8, {top: "+10", ease: Bounce.easeOut});
+    window.insideBounce.play();
 });
 
+
 function backToCover() {
-    TweenMax.to($(".look_inside"), .2, {autoAlpha: 1, delay: .8});
+    TweenMax.to($(".look_inside"), .2, {autoAlpha: 1, delay: .8, onComplete: function(){window.insideBounce.restart();}});
     TweenMax.to($("#bb-bookblock"), .8, {left: -210});
     TweenMax.to($(".arrow_left"), .2, {autoAlpha: 0});
     TweenMax.to($(".arrow_right"), .2, {autoAlpha: 0});
 }
 
 function leavingCover() {
+    window.insideBounce.stop();
     TweenMax.to($(".look_inside"), .2, {autoAlpha: 0});
     TweenMax.to($("#bb-bookblock"), .8, {left: 0});
     TweenMax.to($(".arrow_left"), .2, {autoAlpha: 1, delay: .8});

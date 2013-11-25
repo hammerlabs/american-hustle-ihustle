@@ -61,16 +61,22 @@ $config = array(
             <div class="look_inside"><img src="<?php echo CDN;?>img/look_inside.jpg"></div>
             <div id="bb-bookblock" class="bb-bookblock">
                 <div class="bb-item">
-                    <a href="#"><img src="<?php echo CDN;?>img/front.jpg" alt="image01"/></a>
+                    <a href="#"><img src="<?php echo CDN;?>img/front.jpg" alt="Cover"/></a>
                 </div>
                 <div class="bb-item">
-                    <a href="#"><img src="<?php echo CDN;?>img/page1.jpg" alt="image02"/></a>
+                    <a href="#"><img src="<?php echo CDN;?>img/page1.jpg" alt="Page 1"/></a>
                 </div>
                 <div class="bb-item">
-                    <a href="#"><img src="<?php echo CDN;?>img/page1.jpg" alt="image03"/></a>
+                    <a href="#"><img src="<?php echo CDN;?>img/page17.jpg" alt="Page 17"/></a>
                 </div>
                 <div class="bb-item">
-                    <a href="#"><img src="<?php echo CDN;?>img/page1.jpg" alt="image04"/></a>
+                    <a href="#"><img src="<?php echo CDN;?>img/page34.jpg" alt="Page 34"/></a>
+                </div>
+                <div class="bb-item">
+                    <a href="#"><img src="<?php echo CDN;?>img/page51.jpg" alt="Page 51"/></a>
+                </div>
+                <div class="bb-item">
+                    <a href="#"><img src="<?php echo CDN;?>img/page74.jpg" alt="Page 74"/></a>
                 </div>
                 <div class="arrow_left"></div>
                 <div class="arrow_right"></div>
