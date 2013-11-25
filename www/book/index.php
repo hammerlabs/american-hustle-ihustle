@@ -18,13 +18,11 @@ $config = array(
     "view_port" => $view_port,
     "site_url" => $url,
     "cdn" => CDN,
-    "share_blogname" => $share_blogname,
     "share_tags" => $share_tags,
     "share_title" => $share_title,
     "share_content" => $share_content,
     "share_url" => $share_url,
     "share_image" => $share_image,
-    "webroot" => $webroot,
     "environment" => ENVIRONMENT 
 );
 ?>      
