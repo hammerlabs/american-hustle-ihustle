@@ -23,6 +23,7 @@ $_environments_list = array(
 	)
 );
 
+$user_images_folder = "user_images";
 
 setEnvironment($_environments_list);
 switch (ENVIRONMENT) {

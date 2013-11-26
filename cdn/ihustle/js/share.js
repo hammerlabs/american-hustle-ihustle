@@ -49,7 +49,7 @@ var $Share = {
 		if (obj) $.extend(true, this.options, obj);
 		window.open(
 			'/movies/americanhustle/tumblr/ihustle/twitteroauth/index.php' +
-			'?img='+encodeURIComponent( '../'+this.options.shareImageFile )+
+			'?img='+encodeURIComponent( this.options.shareImageFile )+
 			'&status='+encodeURIComponent( this.options.twitterContent ),
 			'share_twitter',
 			'toolbar=0,status=0,width=548,height=325'

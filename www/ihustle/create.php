@@ -42,7 +42,7 @@ function createUserImage($printtext) {
 	$base->compositeImage( $canvas, Imagick::COMPOSITE_DEFAULT, 67, 30 );
 	$base->setImageFormat('jpeg');
 	$imageName = 'ah_ihustle_'.date("U").'.jpg';
-	$imageUrl = 'user_images/'.$imageName;
+	$imageUrl = $user_images.'/'.$imageName;
 	$base->writeImage($imageUrl);
 	$base->clear(); 
 	$canvas->clear(); 

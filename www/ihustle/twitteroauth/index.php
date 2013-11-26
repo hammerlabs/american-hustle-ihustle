@@ -10,12 +10,12 @@ $image="";
 $status="";
 
 if (isset($_GET["img"])){
-  $image=$_GET["img"];
+  $image = str_replace(array('.', '/', '\\'), "", filter_var($_GET["img"], FILTER_SANITIZE_URL));
   $name  = basename($image);
   $_SESSION["share_img"]=$image;
 }else{
   if (isset($_SESSION["share_img"])){
-    $image=$_SESSION["share_img"];
+    $image = $_SESSION["share_img"];
     $name  = basename($image);
   }
 }
@@ -32,7 +32,7 @@ else{
 
 if ($image!="" && $status!=""){
   if ($tmhOAuth->auth()){
-     $image= __DIR__ . DIRECTORY_SEPARATOR . str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $image);
+     $image= __DIR__ . DIRECTORY_SEPARATOR . $user_images_folder . str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $image);
      $code = $tmhOAuth->user_request(array(
       'method' => 'POST',
       'url' => $tmhOAuth->url('1.1/statuses/update_with_media'),

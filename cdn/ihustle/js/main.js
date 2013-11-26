@@ -162,8 +162,8 @@
     function imageReady(data) {
         if (data != undefined) {
             console.log( "Submit Success", data );
-            window.currentImageFile= data.url;
-            window.currentImageUrl = location.href + data.url;
+            window.currentImageFile= data.name;
+            window.currentImageUrl = location.href + config.user_images_folder + '/' + data.name;
             window.currentPostUrl = data.post_response.response.response.post_url;
             $("#step2 .share_image").css('background-image', 'url(' + window.currentImageUrl + ')');
         } else {
