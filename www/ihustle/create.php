@@ -9,7 +9,7 @@ if (!is_array($oauth_response) && $oauth_response->success === false) {
 	print( json_encode( $oauth_response ) );
 	exit;
 }
-$usercontent = createUserImage( cleanData($_GET["text"]) );
+$usercontent = createUserImage( cleanData($_GET["text"]), $user_images_folder );
 $usercontent["oauth_response"] = $oauth_response;
 $usercontent["post_response"] = postPhoto($usercontent["url"], $share_tags);
 header('Content-Type: application/json');
@@ -24,7 +24,7 @@ function cleanData($str) {
     return $str ;
 }
 
-function createUserImage($printtext) {
+function createUserImage($printtext, $folder) {
 	$text = new ImagickDraw();
 	$text->setGravity( Imagick::GRAVITY_SOUTH );
 	$text->setFont( "fonts/Raleway-Medium.ttf" );
@@ -42,7 +42,7 @@ function createUserImage($printtext) {
 	$base->compositeImage( $canvas, Imagick::COMPOSITE_DEFAULT, 67, 30 );
 	$base->setImageFormat('jpeg');
 	$imageName = 'ah_ihustle_'.date("U").'.jpg';
-	$imageUrl = $user_images.'/'.$imageName;
+	$imageUrl = $folder.'/'.$imageName;
 	$base->writeImage($imageUrl);
 	$base->clear(); 
 	$canvas->clear(); 

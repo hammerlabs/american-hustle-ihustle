@@ -10,7 +10,7 @@ $image="";
 $status="";
 
 if (isset($_GET["img"])){
-  $image = str_replace(array('.', '/', '\\'), "", filter_var($_GET["img"], FILTER_SANITIZE_URL));
+  $image = str_replace(array('.jpg', '.', '/', '\\'), "", filter_var($_GET["img"], FILTER_SANITIZE_URL)).'.jpg';
   $name  = basename($image);
   $_SESSION["share_img"]=$image;
 }else{
@@ -32,7 +32,7 @@ else{
 
 if ($image!="" && $status!=""){
   if ($tmhOAuth->auth()){
-     $image= __DIR__ . DIRECTORY_SEPARATOR . $user_images_folder . str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $image);
+     $image= __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . $user_images_folder . DIRECTORY_SEPARATOR . str_replace(array('/', '\\'), DIRECTORY_SEPARATOR, $image);
      $code = $tmhOAuth->user_request(array(
       'method' => 'POST',
       'url' => $tmhOAuth->url('1.1/statuses/update_with_media'),
@@ -43,11 +43,12 @@ if ($image!="" && $status!=""){
       'multipart' => true,
     ));
 
-    header("Location: " . "twitter_success.php");
-   
+    //header("Location: " . "twitter_success.php");
+    echo $image . "<br/>";
+    echo $code;
   }
   else{
-   var_dump( $tmhOAuth->response);
+    //var_dump( $tmhOAuth->response);
     echo "Error: You need to authorize our app at twitter to share.";
   }
 }
