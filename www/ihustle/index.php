@@ -113,6 +113,7 @@ $config = array(
         <script src="<?php echo CDN;?>js/libs/TweenMax.min.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/share.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
+<!--
 
         <div id="omniturecode">
             <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
@@ -126,5 +127,6 @@ $config = array(
                 var s_code=s.t();if(s_code)document.write(s_code) 
             </script>   
         </div> 
+-->
     </body>
 </html>
