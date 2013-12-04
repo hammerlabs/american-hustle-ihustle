@@ -10,7 +10,7 @@ $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adam
 $og_title = "American Hustle | iHustle | Sony Pictures";
 $share_tags = "#iHustle";    
 $share_title = "American Hustle";    
-$share_content = "This is how #iHustle. Tell the world how you hustle at www.AmericanHustleMovie.Tumblr.com. In theaters December 2013."; 
+$share_content = "This is how #iHustle. Tell the world how you hustle at www.AmericanHustleMovie.Tumblr.com/iHustle. In theaters December 2013."; 
 $share_url = "http://www.AmericanHustleMovie.Tumblr.com"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 
@@ -45,8 +45,8 @@ switch (ENVIRONMENT) {
 		define("CONSUMER_SECRET", "dRtvkuC0CrNNFelkomO7h1kiNwHQBW0BhzNWUQ4j7QFRt0v9Qw");
 		define("OAUTH_TOKEN", "ojLMdByU0IyDKCaMZHyq84Tifg8DxoMQzaYnfvlKsizqu0GSZs");
 		define("OAUTH_SECRET", "EYBF7qfIfzbEgbj1Aw3Dq2XosPha4YWGfDh9ktqBJt6SO0exti"); 
-		define("TWITTER_CONSUMER_KEY", "b5SgSCBxWyhao6NzykdrQ"); 
-		define("TWITTER_CONSUMER_SECRET", "PjzQQxPrEazIlk3AyUfpxZ1AvFbbhVIkiS4pETfJU"); 
+		define("TWITTER_CONSUMER_KEY", "gUrBZNK9SUVHeH1VBhqA"); 
+		define("TWITTER_CONSUMER_SECRET", "bgTEFkMMBX9QwAR7U9RcSLtiz0ndPT6X1w1gk3i7o"); 
 		break;
 
 	case 'production':
