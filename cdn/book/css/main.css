@@ -25,10 +25,15 @@ button:focus {
 .arrow_left {
 	position: relative;
 	background-repeat: no-repeat;
-	top: 300px;
+	top: 0px;
+	left: -55px;
+	width: 480px;
+	height: 630px;
+	background-position-y: 291px;	
+	/*top: 300px;
 	left: -55px;
 	width: 36px;
-	height: 37px;
+	height: 37px;*/
 	cursor: pointer;
 	background-image: url(../img/arrow_left.jpg);
 	visibility: hidden;
@@ -38,10 +43,16 @@ button:focus {
 .arrow_right {
 	position: relative;
 	background-repeat: no-repeat;
-	top: 263px;
+	top: -630px;
+	left: 425px;
+	width: 490px;
+	height: 630px;
+	background-position-x: 454px;
+	background-position-y: 291px;	
+	/*top: 263px;
 	left: 885px;
 	width: 36px;
-	height: 37px;
+	height: 37px;*/
 	cursor: pointer;
 	background-image: url(../img/arrow_right.jpg);
 	visibility: hidden;

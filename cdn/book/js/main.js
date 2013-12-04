@@ -6,6 +6,8 @@ $(document).ready(function(){
         console.log = function(){return;}
     }
 
+    window.totalPages = $("#bb-bookblock .bb-item").length;
+
     $Share.init({
         shareUrl: config.share_url,
         shareImage: config.share_image,
@@ -41,7 +43,8 @@ $(document).ready(function(){
 
     $("#bb-bookblock").bookblock( {
                 speed : 800,
-                shadows: false
+                shadows: false,
+                onEndFlip: onEndFlipHandler
                 /*shadowSides : 0.8,
                 shadowFlip : 0.7*/
             } );
@@ -68,6 +71,13 @@ $(document).ready(function(){
     window.insideBounce.play();
 });
 
+function onEndFlipHandler( page, isLimit ) {
+    if ($("#bb-bookblock").data("bookblock").current == window.totalPages - 1) {
+        TweenMax.to($(".arrow_right"), .2, {autoAlpha: 0});
+    } else {
+        TweenMax.to($(".arrow_right"), .2, {autoAlpha: 1});
+    }
+}
 
 function backToCover() {
     TweenMax.to($(".look_inside"), .2, {autoAlpha: 1, delay: .8, onComplete: function(){window.insideBounce.restart();}});
