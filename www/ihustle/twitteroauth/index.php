@@ -43,9 +43,7 @@ if ($image!="" && $status!=""){
       'multipart' => true,
     ));
 
-    //header("Location: " . "twitter_success.php");
-    echo $image . "<br/>";
-    echo $code;
+    header("Location: " . "twitter_success.php");
   }
   else{
     //var_dump( $tmhOAuth->response);

@@ -23,7 +23,6 @@ $config = array(
     "share_content" => $share_content,
     "share_url" => $share_url,
     "share_image" => $share_image,
-    "user_images_folder" => $user_images_folder,
     "environment" => ENVIRONMENT 
 );
 ?>      

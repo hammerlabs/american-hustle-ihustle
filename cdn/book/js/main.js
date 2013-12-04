@@ -14,6 +14,10 @@ $(document).ready(function(){
         content: config.share_content,
         tags: config.share_tags
     });
+    $(".look_inside").click(function(event) {
+        leavingCover();
+        $("#bb-bookblock").bookblock( 'next' );    
+    });
     $(".facebook").click(function(event) {
         //sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
         $Share.facebook();

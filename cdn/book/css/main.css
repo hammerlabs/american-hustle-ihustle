@@ -51,6 +51,7 @@ button:focus {
 .look_inside {
 	position: relative;
 	left: 180px; /*390px*/
+	cursor: pointer;
 }
 .content .text{
 	position: relative;
