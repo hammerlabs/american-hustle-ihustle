@@ -178,9 +178,8 @@
         });
 
         $(".button.back").click(function(event) {
-        	tryAndTrack('pageView','create_another.html');
+        	tryAndTrack('trackOutboundClick','americanhustle.tumblr.com/ihustle','ihustle_createanother_button');
             location.reload();
-            
         });
 
         $Share.init({
