@@ -21,23 +21,23 @@ $(document).ready(function(){
         $("#bb-bookblock").bookblock( 'next' );    
     });
     $(".facebook").click(function(event) {
-        //sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
+        sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
         $Share.facebook();
     });
     $(".twitter").click(function(event) {
-        //sCode.trackOutboundClick("www.twitter.com","posttwitter_button");
+        sCode.trackOutboundClick("www.twitter.com","posttwitter_button");
         $Share.twitter();
     });
     $(".google").click(function(event) {
-        //sCode.trackOutboundClick("www.google.com","postgoogleplus_button");
+        sCode.trackOutboundClick("www.google.com","postgoogleplus_button");
         $Share.google();
     });
     $(".pinterest").click(function(event) {
-        //sCode.trackOutboundClick("www.pintrest.com","postpinterest_button");
+        sCode.trackOutboundClick("www.pintrest.com","postpinterest_button");
         $Share.pinterest();
     });
     $(".tumblr").click(function(event) {    
-        //sCode.trackOutboundClick("www.tumblr.com","posttumblr_button");
+        sCode.trackOutboundClick("www.tumblr.com","posttumblr_button");
         $Share.tumblr();
     });
 
@@ -72,10 +72,28 @@ $(document).ready(function(){
 });
 
 function onEndFlipHandler( page, isLimit ) {
-    if ($("#bb-bookblock").data("bookblock").current == window.totalPages - 1) {
+    var thisPage = $("#bb-bookblock").data("bookblock").current;
+    if (thisPage == window.totalPages - 1) {
         TweenMax.to($(".arrow_right"), .2, {autoAlpha: 0});
     } else {
         TweenMax.to($(".arrow_right"), .2, {autoAlpha: 1});
+    }
+    switch (thisPage) {
+        case 1:
+            sCode.trackPageView("irving.html");
+            break;
+        case 2:
+            sCode.trackPageView("richie.html");
+            break;
+        case 3:
+            sCode.trackPageView("sydney.html");
+            break;
+        case 4:
+            sCode.trackPageView("carmine.html");
+            break;
+        case 5:
+            sCode.trackPageView("rosalyn.html");
+            break;
     }
 }
 

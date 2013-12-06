@@ -131,6 +131,19 @@ $config = array(
 
         <script src="<?php echo CDN;?>js/share.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
+        
+        <div id="omniturecode">
+            <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
+            <script type="text/javascript">                                                                                 
+                s.pageName='us:movies:americanhustle:feature:book:index.html'
+                s.channel=s.eVar3='us:movies'
+                s.prop3=s.eVar23='us:movies:americanhustle:book'
+                s.prop4=s.eVar4='us:americanhustle'
+                s.prop5=s.eVar5='us:movies:feature'
+                s.prop11='us'     
+                var s_code=s.t();if(s_code)document.write(s_code) 
+            </script>   
+        </div> 
 
     </body>
 </html>
