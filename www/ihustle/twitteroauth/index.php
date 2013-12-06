@@ -44,6 +44,8 @@ if ($image!="" && $status!=""){
     ));
 
     header("Location: " . "twitter_success.php");
+    //echo $image . "<br/>";
+    //echo $code;
   }
   else{
     //var_dump( $tmhOAuth->response);
