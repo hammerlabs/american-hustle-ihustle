@@ -7,11 +7,11 @@ $url = "http://www.AmericanHustleMovie.Tumblr.com";
 $image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 $facebook_url = "https://www.facebook.com/AmericanHustle";    
 $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adams, Christian Bale, Jeremy Renner, Jennifer Lawrence, David O. Russell, Eric Warren Singer";    
-$og_title = "American Hustle | iHustle | Sony Pictures";
+$og_title = "American Hustle | Sony Pictures";
 $share_tags = "#AmericanHustle";    
 $share_title = "American Hustle";    
-$share_content = "This is how #iHustle. Tell the world how you hustle at www.AmericanHustleMovie.Tumblr.com. In theaters December 2013."; 
-$share_url = "http://www.AmericanHustleMovie.Tumblr.com"; 
+$share_content = "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013."; 
+$share_url = "http://www.AmericanHustle-Movie.com/feature/Book/"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 
 $_environments_list = array(
@@ -19,7 +19,8 @@ $_environments_list = array(
 		'stage.sonypictures.com'
 	),
 	'production' => array(
-		'www.sonypictures.com'
+		'www.sonypictures.com',
+		'www.americanhustle-movie.com'
 	)
 );
 
@@ -32,14 +33,14 @@ switch (ENVIRONMENT) {
 		break;
 
 	case 'testing':
-		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/book/");
+		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/feature/book/");
 		define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
 		break;
 
 	case 'production':
 		error_reporting(0);
-		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/tumblr/book/");    
-		define("BLOGNAME", "americanhustlemovie.tumblr.com");            
+		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/feature/book/");    
+		define("BLOGNAME", "americanhustlemovie.tumblr.com");
 		break;
 
 	default:
@@ -51,7 +52,7 @@ function setEnvironment($list) {
 	$_this_env = 'development'; // this is the default env
 	foreach ( $list as $env_name => $env_urls ) {
 		foreach ( $env_urls as $url ) {
-			if ( preg_match( "/{$url}$/", $_host_name ) ) {
+			if ( preg_match( "/{$url}$/i", $_host_name ) ) {
 				$_this_env = $env_name; // boom, we found it
 				break 2;
 			}
