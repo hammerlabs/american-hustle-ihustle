@@ -33,7 +33,7 @@ var $Share = {
 		window.open(
 			tumblr_share,
 			'share_tumblr',
-			'toolbar=0,status=0,width=430,height=450'
+			'toolbar=0,status=0,width=500,height=500'
 		);
 	},
 	twitter: function(obj) {

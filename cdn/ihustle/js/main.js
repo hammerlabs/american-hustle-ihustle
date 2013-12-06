@@ -198,24 +198,24 @@
         $(".facebook").click(function(event) {
         	tryAndTrack('trackOutboundClick',"www.facebook.com","postfacebook_button");
            
-            $Share.facebook();
+            $Share.facebook({content: config.share_content + " " + window.currentPostUrl});
         });
         $(".twitter").click(function(event) {
         	tryAndTrack('trackOutboundClick',"www.twitter.com","posttwitter_button");
     
-            $Share.twitter();
+            $Share.twitter({content: config.share_content + " " + window.currentPostUrl});
         });
         $(".google").click(function(event) {
         	tryAndTrack('trackOutboundClick',"www.google.com","postgoogleplus_button");
-            $Share.google();
+            $Share.google({content: config.share_content + " " + window.currentPostUrl});
         });
         $(".pinterest").click(function(event) {
         	tryAndTrack('trackOutboundClick',"www.pintrest.com","postpinterest_button");
-            $Share.pinterest();
+            $Share.pinterest({content: config.share_content + " " + window.currentPostUrl});
         });
         $(".tumblr").click(function(event) {	
       	   tryAndTrack('trackOutboundClick',"www.tumblr.com","posttumblr_button");
-            $Share.tumblr();
+            $Share.tumblr({content: config.share_content_tumblr + " <a href='" + window.currentPostUrl + "'>" + window.currentPostUrl + "</a>"});
         });
     }
 

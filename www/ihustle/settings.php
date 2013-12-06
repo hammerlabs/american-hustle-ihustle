@@ -10,7 +10,8 @@ $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adam
 $og_title = "American Hustle | iHustle | Sony Pictures";
 $share_tags = "#iHustle";    
 $share_title = "American Hustle";    
-$share_content = "This is how #iHustle. See more at www.AmericanHustleMovie.Tumblr.com/tagged/iHustle. In theaters December 2013."; 
+$share_content = "This is how #iHustle. See more at www.AmericanHustleMovie.Tumblr.com/tagged/iHustle - In theaters December 2013."; 
+$share_content_tumblr = "This is how #iHustle. See more at <a href='http://www.AmericanHustleMovie.Tumblr.com/tagged/iHustle'>www.AmericanHustleMovie.Tumblr.com/tagged/iHustle</a>. In theaters December 2013."; 
 $share_url = "http://www.AmericanHustleMovie.Tumblr.com"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 
