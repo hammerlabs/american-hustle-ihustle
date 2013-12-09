@@ -49,32 +49,41 @@ $(document).ready(function(){
                 shadowFlip : 0.7*/
             } );
 
-    $(".bb-item a").on( 'click touchstart', function() {
+    /*$(".bb-item a").on( 'click touchstart', function() {
         if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
         $("#bb-bookblock").bookblock( 'next' );
         return false;
-    } );
+    } );*/
 
-    $(".arrow_left").on( 'click touchstart', function(event) {
+    $(".arrow_left").on( 'click', function(event) {
         if ($("#bb-bookblock").data("bookblock").current == 1) backToCover();
         $("#bb-bookblock").bookblock( 'prev' );
    });
 
-    $(".arrow_right").on( 'click touchstart', function(event) {
+    $(".arrow_right").on( 'click', function(event) {
+        if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
+        $("#bb-bookblock").bookblock( 'next' );
+   });
+
+    $(".cover").on( 'click', function(event) {
         if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
         $("#bb-bookblock").bookblock( 'next' );
    });
 
     window.insideBounce = new TimelineMax({repeat:-1, repeatDelay:1});
-    window.insideBounce.to($(".look_inside"), .2, {top: "-10", delay: 1});
-    window.insideBounce.to($(".look_inside"), .8, {top: "+10", ease: Bounce.easeOut});
-    window.insideBounce.play();
+    if (!$.browser.msie || ($.browser.msie && parseInt($.browser.version) > 8)) {
+        window.insideBounce.to($(".look_inside"), .2, {top: "-10", delay: 1});
+        window.insideBounce.to($(".look_inside"), .8, {top: "+10", ease: Bounce.easeOut});
+        window.insideBounce.play();
+    }
 });
 
 function onEndFlipHandler( page, isLimit ) {
     var thisPage = $("#bb-bookblock").data("bookblock").current;
     if (thisPage == window.totalPages - 1) {
         TweenMax.to($(".arrow_right"), .2, {autoAlpha: 0});
+    } else if (thisPage == 0) {
+        backToCover();
     } else {
         TweenMax.to($(".arrow_right"), .2, {autoAlpha: 1});
     }
@@ -100,6 +109,7 @@ function onEndFlipHandler( page, isLimit ) {
 function backToCover() {
     TweenMax.to($(".look_inside"), .2, {autoAlpha: 1, delay: .8, onComplete: function(){window.insideBounce.restart();}});
     TweenMax.to($("#bb-bookblock"), .8, {left: -210});
+    TweenMax.to($(".cover"), .2, {autoAlpha: 1});
     TweenMax.to($(".arrow_left"), .2, {autoAlpha: 0});
     TweenMax.to($(".arrow_right"), .2, {autoAlpha: 0});
 }
@@ -108,6 +118,7 @@ function leavingCover() {
     window.insideBounce.stop();
     TweenMax.to($(".look_inside"), .2, {autoAlpha: 0});
     TweenMax.to($("#bb-bookblock"), .8, {left: 0});
+    TweenMax.to($(".cover"), .2, {autoAlpha: 0, delay: .8});
     TweenMax.to($(".arrow_left"), .2, {autoAlpha: 1, delay: .8});
     TweenMax.to($(".arrow_right"), .2, {autoAlpha: 1, delay: .8});
 }

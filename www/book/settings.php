@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 
 $title = "American Hustle | Book"; 
-$desc = "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013."; 
+$desc = "See the book that inspired the film. American Hustle In theaters December 2013."; 
 $url = "http://www.AmericanHustleMovie.Tumblr.com"; 
 $image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 $facebook_url = "https://www.facebook.com/AmericanHustle";    
@@ -10,7 +10,7 @@ $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adam
 $og_title = "American Hustle | Sony Pictures";
 $share_tags = "#AmericanHustle";    
 $share_title = "American Hustle";    
-$share_content = "Check out #AmericanHustle on Tumblr and tell the world how you hustle. In theaters December 2013."; 
+$share_content = "See the book that inspired the film. American Hustle In theaters December 2013."; 
 $share_url = "http://www.AmericanHustle-Movie.com/feature/Book/"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 

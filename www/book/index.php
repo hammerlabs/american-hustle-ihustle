@@ -47,7 +47,7 @@ $config = array(
         <link href='<?php echo CDN;?>css/main.css' rel='stylesheet' type='text/css'>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js" type="text/javascript"></script>  
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+        <script src="<?php echo CDN;?>js/TweenMax.min.js"></script>
         <script src="<?php echo CDN;?>js/modernizr.custom.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/jquerypp.custom.js" type="text/javascript"></script>  
         <script src="<?php echo CDN;?>js/jquery.bookblock.js" type="text/javascript"></script>  
@@ -78,6 +78,7 @@ $config = array(
                 <div class="bb-item">
                     <a href="#"><img src="<?php echo CDN;?>img/page74.jpg" alt="Page 74"/></a>
                 </div>
+                <div class="cover"></div>
                 <div class="arrow_left"></div>
                 <div class="arrow_right"></div>
             </div>
