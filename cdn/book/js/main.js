@@ -22,23 +22,23 @@ $(document).ready(function(){
     });
     $(".facebook").click(function(event) {
         sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
-        $Share.facebook();
+        $Share.facebook({content: config.share_content_fb});
     });
     $(".twitter").click(function(event) {
         sCode.trackOutboundClick("www.twitter.com","posttwitter_button");
-        $Share.twitter();
+        $Share.twitter({content: config.share_content});
     });
     $(".google").click(function(event) {
         sCode.trackOutboundClick("www.google.com","postgoogleplus_button");
-        $Share.google();
+        $Share.google({content: config.share_content});
     });
     $(".pinterest").click(function(event) {
         sCode.trackOutboundClick("www.pintrest.com","postpinterest_button");
-        $Share.pinterest();
+        $Share.pinterest({content: config.share_content});
     });
     $(".tumblr").click(function(event) {    
         sCode.trackOutboundClick("www.tumblr.com","posttumblr_button");
-        $Share.tumblr();
+        $Share.tumblr({content: config.share_content});
     });
 
     $("#bb-bookblock").bookblock( {
