@@ -95,7 +95,7 @@
 				if(!trackingInit){	
 					trackingInit = true;
 					$.ajax({
-						url: 'http://www.sonypictures.com/global/scripts/s_code.js',
+						url: '//www.sonypictures.com/global/scripts/s_code.js',
 						dataType: "script",
 						success: function(){						
 							s.pageName='us:movies:americanhustle:tumblr:ihustle:ihustlesubmitted.html'

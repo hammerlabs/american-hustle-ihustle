@@ -40,7 +40,7 @@ switch (ENVIRONMENT) {
 		break;
 
 	case 'testing':
-		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/ihustle/");
+		define("CDN", "//stage.sonypictures.com/origin-flash/movies/americanhustle/tumblr/ihustle/");
 		define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
 		define("CONSUMER_KEY", "VTrFOn4QnQvbFZ8T99yzbA1uEbITTvjZOxHhdBJ6b5sZvTElwe");
 		define("CONSUMER_SECRET", "dRtvkuC0CrNNFelkomO7h1kiNwHQBW0BhzNWUQ4j7QFRt0v9Qw");
@@ -52,7 +52,7 @@ switch (ENVIRONMENT) {
 
 	case 'production':
 		error_reporting(0);
-		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/tumblr/ihustle/");    
+		define("CDN", "//flash.sonypictures.com/movies/americanhustle/tumblr/ihustle/");    
 		define("BLOGNAME", "americanhustlemovie.tumblr.com");            
 		define("CONSUMER_KEY", "AEbtgNWSbnRCFndfKHbs3BbokGwxtcPcOM9QG4ZiAGN0EzjRcy");
         define("CONSUMER_SECRET", "4ZkUP7sKzno9I2uvuFTh1UQUCAxZHNj8wrRptIiQJxXpiZFBzB");

@@ -44,8 +44,8 @@ $config = array(
         <meta property="og:type" content="movie" />
         <meta property="og:site_name" content="<?php echo $title; ?>" />  
 
-        <link href='http://fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/normalize.min.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/main.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/mobile.css' rel='stylesheet' type='text/css'>
@@ -73,7 +73,7 @@ $config = array(
 	                	<textarea id="user_input" placeholder="Tell us how you hustle..."></textarea>
                 	</div>
                 	<!--div class="info">Please check your message before submitting.</div-->
-                    <div class="legal">By adding text and hitting “SUBMIT” below, I understand that my text may appear in the iHustle Gallery of this page, I certify that I have read and agree to this iHustle feature’s <a class="terms" href="http://www.sonypictures.net/corp/tos.html" target="_blank">Terms of Use</a>, I understand that my text is a “User Submission” and I specifically represent that it was written solely by me and is not offensive or otherwise in violation of such terms.</div>
+                    <div class="legal">By adding text and hitting “SUBMIT” below, I understand that my text may appear in the iHustle Gallery of this page, I certify that I have read and agree to this iHustle feature’s <a class="terms" href="//www.sonypictures.net/corp/tos.html" target="_blank">Terms of Use</a>, I understand that my text is a “User Submission” and I specifically represent that it was written solely by me and is not offensive or otherwise in violation of such terms.</div>
                     <a class="button submit">SUBMIT</a>
                 	<a class="button sample">VIEW SAMPLE</a>
                 </div>
@@ -118,7 +118,7 @@ $config = array(
 <!--
 
         <div id="omniturecode">
-            <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
+            <script type="text/javascript" src="//www.sonypictures.com/global/scripts/s_code.js"></script>
             <script type="text/javascript">                                                                                 
                 s.pageName='us:movies:americanhustle:tumblr:ihustle:index.html'
                 s.channel=s.eVar3='us:movies'

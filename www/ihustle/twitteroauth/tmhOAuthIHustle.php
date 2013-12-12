@@ -90,7 +90,8 @@ class tmhOAuthIHustle extends tmhOAuth {
       // send request for a request token  
       $this->request("POST", $this->url("oauth/request_token", ""), array(  
           // pass a variable to set the callback  
-          'oauth_callback'    => "http://".$_SERVER["HTTP_HOST"].filter_var($_SERVER['PHP_SELF'], FILTER_SANITIZE_URL)
+          $protocol = strtolower(array_shift(explode("/", $_SERVER["SERVER_PROTOCOL"]))); 
+          'oauth_callback' => $protocol."://".$_SERVER["HTTP_HOST"].filter_var($_SERVER['PHP_SELF'], FILTER_SANITIZE_URL)
       ));  
 
     
@@ -134,8 +135,9 @@ class tmhOAuthIHustle extends tmhOAuth {
           // state is now 2  
           $_SESSION["authstate"] = 2;  
     
-          // redirect user to clear leftover GET variables  
-          header("Location: " .   "http://".$_SERVER["HTTP_HOST"].filter_var($_SERVER['PHP_SELF'], FILTER_SANITIZE_URL) );
+          // redirect user to clear leftover GET variables 
+          $protocol = strtolower(array_shift(explode("/", $_SERVER["SERVER_PROTOCOL"]))); 
+          header("Location: " . $protocol . "://".$_SERVER["HTTP_HOST"].filter_var($_SERVER['PHP_SELF'], FILTER_SANITIZE_URL) );
           exit;  
       }  
       return false;  
