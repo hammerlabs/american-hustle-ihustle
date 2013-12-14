@@ -20,6 +20,10 @@ $(document).ready(function(){
         leavingCover();
         $("#bb-bookblock").bookblock( 'next' );    
     });
+    $("#see_now").click(function(event) {
+        sCode.trackOutboundClickToBuy('http://www.fandango.com/americanhustle_164469/movieoverview','book_fandango_button');
+        window.open('http://www.fandango.com/americanhustle_164469/movieoverview', '_blank');
+    });
     $(".facebook").click(function(event) {
         sCode.trackOutboundClick("www.facebook.com","postfacebook_button");
         $Share.facebook({content: config.share_content_fb});

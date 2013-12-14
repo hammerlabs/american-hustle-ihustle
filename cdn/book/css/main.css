@@ -149,6 +149,7 @@ button:focus {
 #share_links {
   margin: auto;
   overflow: hidden;
+  padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;
 }
@@ -172,8 +173,23 @@ button:focus {
 	background-image: url(../img/pinterest.jpg);
 	margin-right: 0px;
 }
-
-
+#footer #see_now {
+	margin: auto;
+	background-image: url(../img/see_now_bg.jpg);
+	width: 305px;
+	height: 43px;
+	cursor: pointer;
+}
+#footer #see_now span {
+	font-family: Baumans;
+	font-size: 16px;
+    font-weight: bold;
+	color: #464646;
+	margin: 0;
+	position: relative;
+	left: 90px;
+	top: 12px;
+}
 #footer {
 	background: none repeat scroll 0 0 #ffffff;
 	font-family: Arial,Helvetica,sans-serif;

@@ -86,6 +86,10 @@ $config = array(
 
        <div id="footer">
             <div id="footer_container">
+                <div id="see_now">
+                    <span>SEE THE MOVIE NOW</span>
+                </div>
+
                 <div id="share_links">
                     <span class="social facebook"></span>
                     <span class="social twitter"></span>
@@ -120,11 +124,9 @@ $config = array(
                     </div>
 
                     <div id="links">
-                        <a href="http://www.sonypictures.net/corp/privacy.html" target="_blank">PRIVACY
-                        POLICY</a> | <a href="http://www.sonypictures.net/corp/tou.html" 
-                        target="_blank">TERMS OF USE</a> | <a 
-                        href="http://www.sonypictures.net/corp/privacy.html#information-we-collect-automatically"
-                         target="_blank">COOKIES</a>
+                        <a href="http://www.sonypictures.com/corp/privacy.html" target="_blank">PRIVACY
+                        POLICY</a> | <a href="http://www.sonypictures.com/corp/tos.html" 
+                        target="_blank">TERMS OF USE</a>
                     </div>
                 </div>
             </div>
