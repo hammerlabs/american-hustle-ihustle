@@ -20,7 +20,8 @@ $_environments_list = array(
 		'stage.sonypictures.com'
 	),
 	'production' => array(
-		'www.sonypictures.com'
+		'www.sonypictures.com',
+		'www.americanhustle-movie.com'
 	)
 );
 

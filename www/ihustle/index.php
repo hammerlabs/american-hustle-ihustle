@@ -82,7 +82,7 @@ $config = array(
                 </div>
                 <div id="step2">
                 	<div class="share_image"></div>
-                	<div class="inputbox">Your hustle has been submitted!<br/><br/>Now share it!</div>
+                	<div class="inputbox">Your hustle has been submitted for review.<br/><br/>Share it now and check back later to see your image in the gallery!</div>
                 	<div class="social_holder">
 	                	<span class="social facebook"></span>
 	                	<span class="social twitter"></span>
