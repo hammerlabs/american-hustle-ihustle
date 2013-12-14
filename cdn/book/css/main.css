@@ -116,7 +116,7 @@ button:focus {
 }
 
 #footer a {
-  color: #7f8283; 
+  color: #464646; 
 }
 #footer #button_links a.button.selected, a.button:hover {
 	background-color: #929292; 
@@ -179,7 +179,7 @@ button:focus {
 	font-family: Arial,Helvetica,sans-serif;
 	font-size: 11px;
 	overflow: hidden;
-	color: #7f8283;
+	color: #464646;
 	position: relative;
 	top: -60px;
 	width: 980px;
@@ -215,7 +215,6 @@ a.official_url_link {
 }
 #right_container {
   float: left;
-  padding-top: 6px;
   width: 50%;
 }
 #ratings img {
