@@ -21,6 +21,7 @@ $config = array(
     "share_tags" => $share_tags,
     "share_title" => $share_title,
     "share_content" => $share_content,
+    "share_content_fb" => $share_content_fb,
     "share_url" => $share_url,
     "share_image" => $share_image,
     "environment" => ENVIRONMENT 
