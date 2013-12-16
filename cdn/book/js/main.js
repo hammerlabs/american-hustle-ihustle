@@ -62,17 +62,21 @@ $(document).ready(function(){
     $(".arrow_left").on( 'click', function(event) {
         if ($("#bb-bookblock").data("bookblock").current == 1) backToCover();
         $("#bb-bookblock").bookblock( 'prev' );
-   });
+    });
 
     $(".arrow_right").on( 'click', function(event) {
         if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
         $("#bb-bookblock").bookblock( 'next' );
-   });
+    });
 
     $(".cover").on( 'click', function(event) {
         if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
         $("#bb-bookblock").bookblock( 'next' );
-   });
+    });
+    $(".bb-item").on( 'click', function(event) {
+        if ($("#bb-bookblock").data("bookblock").current == 0) leavingCover();
+        $("#bb-bookblock").bookblock( 'next' );
+    });
 
     window.insideBounce = new TimelineMax({repeat:-1, repeatDelay:1});
     if (!$.browser.msie || ($.browser.msie && parseInt($.browser.version) > 8)) {

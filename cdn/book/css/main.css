@@ -31,6 +31,7 @@ button:focus {
 	height: 630px;
 	margin: auto;
 	cursor: pointer;
+	visibility: visible;
 }
 
 .arrow_left {
@@ -89,9 +90,12 @@ button:focus {
 }
 
 .bb-bookblock a {
-	cursor: default;
+	cursor: pointer;
 }
 
+.bb-item {
+	cursor: pointer;
+}
 .light{
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -197,7 +201,7 @@ button:focus {
 	overflow: hidden;
 	color: #464646;
 	position: relative;
-	top: -60px;
+	top: -100px;
 	width: 980px;
 	margin: auto;
 }
