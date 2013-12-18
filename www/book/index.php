@@ -41,8 +41,8 @@ $config = array(
         <meta property="og:type" content="movie" />
         <meta property="og:site_name" content="<?php echo $title; ?>" />  
 
-        <link href='http://fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Baumans|Raleway' rel='stylesheet' type='text/css'>
+        <link href='//fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/normalize.min.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/bookblock.css' rel='stylesheet' type='text/css'>
         <link href='<?php echo CDN;?>css/main.css' rel='stylesheet' type='text/css'>
@@ -137,7 +137,7 @@ $config = array(
         <script src="<?php echo CDN;?>js/main.js" type="text/javascript"></script>  
         
         <div id="omniturecode">
-            <script type="text/javascript" src="http://www.sonypictures.com/global/scripts/s_code.js"></script>
+            <script type="text/javascript" src="//www.sonypictures.com/global/scripts/s_code.js"></script>
             <script type="text/javascript">                                                                                 
                 s.pageName='us:movies:americanhustle:feature:book:index.html'
                 s.channel=s.eVar3='us:movies'

@@ -37,18 +37,18 @@ switch (ENVIRONMENT) {
 		break;
 
 	case 'testing1':
-		define("CDN", "http://cdn-dev.triggerglobal.com/sony/americanhustle/book/");
+		define("CDN", "//cdn-dev.triggerglobal.com/sony/americanhustle/book/");
 		define("BLOGNAME", "ahdev.tumblr.com");
 		break;
 
 	case 'testing':
-		define("CDN", "http://stage.sonypictures.com/origin-flash/movies/americanhustle/feature/book/");
+		define("CDN", "//stage.sonypictures.com/origin-flash/movies/americanhustle/feature/book/");
 		define("BLOGNAME", "americanhustlemoviedev.tumblr.com"); 
 		break;
 
 	case 'production':
 		error_reporting(0);
-		define("CDN", "http://flash.sonypictures.com/movies/americanhustle/feature/book/");    
+		define("CDN", "//flash.sonypictures.com/movies/americanhustle/feature/book/");    
 		define("BLOGNAME", "americanhustlemovie.tumblr.com");
 		break;
 
