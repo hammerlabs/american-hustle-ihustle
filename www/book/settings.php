@@ -10,8 +10,8 @@ $keywords = "American Hustle Movie, American Hustle, drama, con, crime, Amy Adam
 $og_title = "American Hustle | Sony Pictures";
 $share_tags = "#AmericanHustle";    
 $share_title = "American Hustle";    
-$share_content = "See the book that inspired the film. #AmericanHustle In theaters December 2013."; 
-$share_content_fb = "See the book that inspired the film. American Hustle In theaters December 2013."; 
+$share_content = "See the book that inspired the film. #AmericanHustle In theaters December 2013. http://www.AmericanHustle-Movie.com/feature/book/"; 
+$share_content_fb = "See the book that inspired the film. American Hustle In theaters December 2013. http://www.AmericanHustle-Movie.com/feature/book/"; 
 $share_url = "http://www.AmericanHustle-Movie.com/feature/book/"; 
 $share_image = "http://flash.sonypictures.com/shared/movies/americanhustle/share.jpg"; 
 
