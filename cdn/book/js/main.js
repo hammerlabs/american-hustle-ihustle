@@ -21,7 +21,7 @@ $(document).ready(function(){
         $("#bb-bookblock").bookblock( 'next' );    
     });
     $("#see_now").click(function(event) {
-        sCode.trackOutboundClickToBuy('http://www.fandango.com/americanhustle_164469/movieoverview','book_fandango_button');
+        sCode.trackOutboundClickToBuy('http://www.fandango.com/americanhustle_164469/movieoverview','fandango_button');
         window.open('http://www.fandango.com/americanhustle_164469/movieoverview', '_blank');
     });
     $(".facebook").click(function(event) {
