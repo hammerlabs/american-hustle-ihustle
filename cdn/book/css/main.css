@@ -89,12 +89,8 @@ button:focus {
 	left: -210px;
 }
 
-.bb-bookblock a {
-	cursor: pointer;
-}
-
-.bb-item {
-	cursor: pointer;
+.bb-item, .bb-item a {
+	cursor: default;
 }
 .light{
 	background-size: cover;
